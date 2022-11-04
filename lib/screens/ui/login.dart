@@ -1,77 +1,128 @@
-
-import 'package:bolsa_de_trabajo/screens/home/home.dart';
+import 'package:bolsa_de_trabajo/providers%20copy/loginFormProvider.dart';
+import 'package:bolsa_de_trabajo/screens/ui/decorations/input_decorations.dart';
+import 'package:bolsa_de_trabajo/screens/ui/widgets/auth_background.dart';
+import 'package:bolsa_de_trabajo/screens/ui/widgets/card_container.dart';
+import 'package:bolsa_de_trabajo/services/AuthenticationService.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class Login extends StatefulWidget{
-  @override
-  LoginState createState() => LoginState();
-}
-
-class LoginState extends State<Login>{
-  TextEditingController email = new TextEditingController();
-  TextEditingController password = new TextEditingController();
+class Login extends StatelessWidget {
+  const Login(BuildContext context, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepOrange,
-      body: Container(        
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black38,
-              blurRadius: 40.0,
-              spreadRadius: 25.0,
-              offset: Offset(
-                15.0,15.0
-              )
-          )],
-          color: Colors.amber,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        margin: EdgeInsets.only(top: 60, left: 20, right: 20, bottom: 70),
-        padding: EdgeInsets.only(left: 20, right: 20),
-        child: Center(          
-          child: Column(            
-            mainAxisAlignment: MainAxisAlignment.start,
+      body: AuthBackground(
+        child: SingleChildScrollView(
+          child: Column(
             children: [
-              Expanded(child: Image.asset("assets/images/login.png", height: 20,),),
-              //SizedBox(height: 20,),
-              TextField(
-                controller: email,
-                decoration: InputDecoration(
-                  hintText: "username@correo.com"
+              SizedBox(height: 250),
+              CardContainer(
+                child: Column(
+                  children: [
+                    const SizedBox(height: 10),
+                    Text(
+                      'Login',
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
+                    const SizedBox(height: 30),
+                    ChangeNotifierProvider(
+                      create: (_) => LoginFormProvider(),
+                      child: _LoginForm(),
+                    )
+                  ],
                 ),
               ),
-              SizedBox(height: 30,),
-              TextField(
-                controller: password,
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: "******"
+              const SizedBox(height: 50),
+              const Text(
+                'Crear una nueva cuenta',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(top: 70),
-                width: 200,
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(10)
-                ),
-                child: MaterialButton(
-                  child: Text("Login", style: TextStyle(color: Colors.white, fontSize: 20),),
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: ((context) => Home())));
-                  },
-                ),
-              ),
-              SizedBox(height: 30,),
-              Text("Nueva Cuenta Usuario? crea una cuenta"),
+              const SizedBox(height: 50),
             ],
           ),
-        ),        
+        ),
       ),
     );
   }
+}
 
+class _LoginForm extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+     final loginForm = Provider.of<LoginFormProvider>(context);
+    return Container(
+      child: Form(
+        key: loginForm.formKey,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        child: Column(
+          children: [
+            TextFormField(
+              autocorrect: false,
+              keyboardType: TextInputType.emailAddress,
+              decoration: InputDecorations.authInputDecoration(
+                  hintText: 'tucasilladeemail@gmail.com',
+                  labelText: 'Correo electrónico',
+                  prefixIcon: Icons.alternate_email_rounded),
+              onChanged: (value) => loginForm.email = value,
+              validator: (value) {
+                String pattern =
+                    r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                RegExp regExp = new RegExp(pattern);
+
+                return regExp.hasMatch(value ?? '')
+                    ? null
+                    : 'El valor ingresado no es un correo valido';
+              },
+            ),
+            SizedBox(height: 30),
+            TextFormField(
+              autocorrect: false,
+              obscureText: true,
+              keyboardType: TextInputType.text,
+              decoration: InputDecorations.authInputDecoration(
+                  hintText: '*****',
+                  labelText: 'Contraseña',
+                  prefixIcon: Icons.remove_red_eye_outlined),
+              onChanged: (value) => loginForm.password = value,
+              validator: (value) {
+                return (value != null && value.length >= 6)
+                    ? null
+                    : 'La contraseña debe de ser de 6 caracteres';
+              },
+            ),
+            const SizedBox(height: 30),
+            MaterialButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              disabledColor: Colors.grey,
+              elevation: 0,
+              color: Colors.deepPurple,
+              child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 80,
+                   vertical: 15),
+                  child: Text(
+                    loginForm.isLoading ? 'Ingresando': 'Aceptar' ,                     
+                    style: const TextStyle(color: Colors.white),
+                  )), 
+              onPressed: loginForm.isLoading && loginForm.email.length!=0 && loginForm.password.length!=0
+                  ? null
+                  : () {
+                      FocusScope.of(context).unfocus();
+                      if (!loginForm.isValidForm()) return;
+                      //loginForm.isLoading = true;
+                      Future.delayed(Duration(seconds: 5));
+                      // TODO: validar si el login es correcto
+                      AuthenticationService service = new AuthenticationService();
+                      service.getLoginUser(loginForm, context);                      
+                    }
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }

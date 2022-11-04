@@ -1,24 +1,16 @@
-import 'package:bolsa_de_trabajo/screens/ui/login.dart';
+import 'package:bolsa_de_trabajo/screens/homeApplicant/components/bodyHomeApplicant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
-import 'package:bolsa_de_trabajo/screens/home/components/bodyHome.dart';
 
-
-class Home extends StatelessWidget{
-  /*static Route<dynamic> route() {
-    return MaterialPageRoute(
-      builder: (context) => const Home(),
-    );
-  }*/
-    
-  const Home({Key? key}) : super(key: key);
+class HomeApplicant extends StatelessWidget{    
+  const HomeApplicant({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: BodyHome(),
+      body: BodyHomeApplicant(),
     );
   }
 
@@ -38,14 +30,14 @@ class Home extends StatelessWidget{
             color: kTextColor,
           ),
           onPressed: () {
-            Navigator.push(
+            /*Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => Login(
+                builder: (context) => ProfileApplicant(
                   context,
                 ),
               ),
-            );
+            );*/
           },
         ),
         IconButton(
@@ -58,7 +50,7 @@ class Home extends StatelessWidget{
             /*Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => Signup(
+                builder: (context) => Logout(
                   context,
                 ),
               ),

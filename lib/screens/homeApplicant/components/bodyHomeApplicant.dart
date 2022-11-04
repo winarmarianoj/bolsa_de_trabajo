@@ -5,13 +5,13 @@ import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/services/JobOfferService.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 
-class BodyHome extends StatefulWidget{  
-  const BodyHome({Key? key}) : super(key: key);  
+class BodyHomeApplicant extends StatefulWidget{  
+  const BodyHomeApplicant({Key? key}) : super(key: key);  
   @override  
   State<StatefulWidget> createState() => HomeState();
 }
 
-class HomeState extends State<BodyHome>{  
+class HomeState extends State<BodyHomeApplicant>{  
   JobOfferService jobOfferService = new JobOfferService();
   Future<List<JobOffer>>? futureJobOffer;
 

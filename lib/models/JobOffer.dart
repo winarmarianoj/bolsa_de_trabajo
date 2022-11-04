@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class JobOffer {
-  final String title, description, area, experience, modality, position, category;
-  final String? body, datePublished, modifiedDay, deletedDay, message, state;
+  final String title, description, area, experience, modality, position, category, body;
+  final String? datePublished, modifiedDay, deletedDay, message, state;
   final int id;
   final bool? deleted;
   final Color? color;
@@ -12,7 +12,7 @@ class JobOffer {
     required this.title,
     required this.description,
     required this.area,
-    this.body,
+    required this.body,
     required this.experience,
     required this.modality,
     required this.position,
