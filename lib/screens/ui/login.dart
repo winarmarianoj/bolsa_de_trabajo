@@ -1,8 +1,8 @@
-import 'package:bolsa_de_trabajo/providers%20copy/loginFormProvider.dart';
+import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:bolsa_de_trabajo/screens/ui/decorations/input_decorations.dart';
 import 'package:bolsa_de_trabajo/screens/ui/widgets/auth_background.dart';
 import 'package:bolsa_de_trabajo/screens/ui/widgets/card_container.dart';
-import 'package:bolsa_de_trabajo/services/AuthenticationService.dart';
+import 'package:bolsa_de_trabajo/services/authenticationService.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

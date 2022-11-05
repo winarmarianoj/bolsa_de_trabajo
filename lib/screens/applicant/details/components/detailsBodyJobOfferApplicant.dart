@@ -1,15 +1,14 @@
 import 'package:bolsa_de_trabajo/constant/constant.dart';
-import 'package:bolsa_de_trabajo/screens/home/details/components/descriptionJobOffer.dart';
-import 'package:bolsa_de_trabajo/screens/home/details/components/productJobOffer.dart';
+import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
+import 'package:bolsa_de_trabajo/screens/applicant/details/components/descriptionJobOfferApplicant.dart';
+import 'package:bolsa_de_trabajo/screens/applicant/details/components/productJobOfferApplicant.dart';
 import 'package:flutter/material.dart';
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
-import 'package:bolsa_de_trabajo/constant/constant.dart';
-import 'package:flutter_svg/svg.dart';
 
-class DetailsBodyJobOffer extends StatelessWidget {
+class DetailsBodyJobOfferApplicant extends StatelessWidget {
   final JobOffer jobOffer;
-
-  const DetailsBodyJobOffer({Key? key, required this.jobOffer}) : super(key: key);
+  final LoginFormProvider loginForm;
+  const DetailsBodyJobOfferApplicant({Key? key, required this.jobOffer, required this.loginForm}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     // It provide us total height and width
@@ -46,9 +45,9 @@ class DetailsBodyJobOffer extends StatelessWidget {
                   ),
                   child: Column(
                     children: <Widget>[                                            
-                      DescriptionJobOffer(jobOffer: jobOffer),
+                      DescriptionJobOfferApplicant(jobOffer: jobOffer),
                       const SizedBox(height: kDefaultPaddin / 2),                                  
-                      ProductJobOffer(jobOffer: jobOffer),
+                      ProductJobOfferApplicant(jobOffer: jobOffer, loginForm: loginForm),
                       const SizedBox(height: kDefaultPaddin / 2),
                     ],
                   ),                  

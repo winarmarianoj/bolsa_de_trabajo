@@ -1,13 +1,16 @@
+import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 
-class ItemCardJobOffer extends StatelessWidget {
+class ItemCardJobOfferApplicant extends StatelessWidget {
   final JobOffer? jobOffer;
+  final LoginFormProvider? loginForm;
   final VoidCallback? press;
-  const ItemCardJobOffer({
+  const ItemCardJobOfferApplicant({
     Key? key,
     this.jobOffer,
+    this.loginForm,
     this.press, 
   }) : super(key: key);
 
@@ -32,10 +35,6 @@ class ItemCardJobOffer extends StatelessWidget {
               bottomRight: Radius.circular(20),
             ),
           ),
-        /*child: Card(
-          //color: Color.fromARGB(230, 255, 255, 255),        
-          
-        ),*/
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[

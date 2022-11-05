@@ -1,14 +1,17 @@
+import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
+import 'package:bolsa_de_trabajo/services/applicantService.dart';
 import 'package:flutter/material.dart';
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class ProductJobOffer extends StatelessWidget {
-  const ProductJobOffer({
-    Key? key,
-    required this.jobOffer,
-  }) : super(key: key);
-
+class ProductJobOfferApplicant extends StatelessWidget {
   final JobOffer jobOffer;
+  final LoginFormProvider loginForm;  
+  const ProductJobOfferApplicant({
+    Key? key,
+    required this.jobOffer,required this.loginForm,
+  }) : super(key: key);  
 
   @override
   Widget build(BuildContext context) {    
@@ -158,6 +161,8 @@ class ProductJobOffer extends StatelessWidget {
                     ),
                     onPressed: () {
                       // TODO si el usuario es Applicant vera este boton
+                      ApplicantService service = new ApplicantService();
+                      service.postulate(jobOffer.id, loginForm, context);
                     },
                   ),
                 ),

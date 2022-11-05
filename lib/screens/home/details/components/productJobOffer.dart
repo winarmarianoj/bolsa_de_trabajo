@@ -1,14 +1,14 @@
+import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 
 class ProductJobOffer extends StatelessWidget {
+  final JobOffer jobOffer;  
   const ProductJobOffer({
     Key? key,
     required this.jobOffer,
-  }) : super(key: key);
-
-  final JobOffer jobOffer;
+  }) : super(key: key);  
 
   @override
   Widget build(BuildContext context) {    
@@ -128,7 +128,7 @@ class ProductJobOffer extends StatelessWidget {
               ],
             ),
           ),                   
-          Row(            
+          /*Row(            
             children: <Widget>[              
               Container(
                   margin: EdgeInsets.only(top: size.height * 0.04),
@@ -162,7 +162,7 @@ class ProductJobOffer extends StatelessWidget {
                   ),
                 ),
             ],
-          ),     
+          ),    */ 
         ],
       ),
     );

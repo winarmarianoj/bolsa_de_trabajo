@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 
-class DescriptionJobOffer extends StatelessWidget {
-  const DescriptionJobOffer({
+class DescriptionJobOfferApplicant extends StatelessWidget {
+  const DescriptionJobOfferApplicant({
     Key? key,
     required this.jobOffer,
   }) : super(key: key);

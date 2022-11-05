@@ -2,7 +2,7 @@ import 'package:bolsa_de_trabajo/screens/home/components/itemCardJobOffer.dart';
 import 'package:bolsa_de_trabajo/screens/home/details/detailsScreenJobOffer.dart';
 import 'package:flutter/material.dart';
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
-import 'package:bolsa_de_trabajo/services/JobOfferService.dart';
+import 'package:bolsa_de_trabajo/services/jobOfferService.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 
 class BodyHome extends StatefulWidget{  

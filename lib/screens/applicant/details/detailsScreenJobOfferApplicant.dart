@@ -1,17 +1,18 @@
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
-import 'package:bolsa_de_trabajo/screens/home/details/components/detailsBodyJobOffer.dart';
+import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
+import 'package:bolsa_de_trabajo/screens/applicant/details/components/detailsBodyJobOfferApplicant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:bolsa_de_trabajo/constant/constant.dart';
 
-class DetailsScreenJobOffer extends StatelessWidget {
+class DetailsScreenJobOfferApplicant extends StatelessWidget {
   final JobOffer jobOffer;
-  const DetailsScreenJobOffer({Key? key, required this.jobOffer}) : super(key: key);
+  final LoginFormProvider loginForm;
+  const DetailsScreenJobOfferApplicant({Key? key, required this.jobOffer, required this.loginForm}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: DetailsBodyJobOffer(jobOffer: jobOffer,),
+      body: DetailsBodyJobOfferApplicant(jobOffer: jobOffer, loginForm: loginForm),
     );
   }
 
