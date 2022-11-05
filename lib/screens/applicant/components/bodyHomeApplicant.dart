@@ -1,5 +1,6 @@
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:bolsa_de_trabajo/screens/applicant/components/itemCardJobOfferApplicant.dart';
+import 'package:bolsa_de_trabajo/screens/applicant/details/detailsJobOfferApplied.dart';
 import 'package:bolsa_de_trabajo/screens/applicant/details/detailsScreenJobOfferApplicant.dart';
 import 'package:flutter/material.dart';
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
@@ -34,7 +35,6 @@ class BodyHomeApplicant extends StatelessWidget{
                   builder: (context, snapshot) {
                     if(snapshot.hasData){
                       List<JobOffer>? jobofferlist = [];
-                      var list = snapshot.data;
                       jobofferlist = snapshot.data as List<JobOffer>?;
                       return GridView.builder(
                           itemCount: amountListJobOffer(snapshot.data),

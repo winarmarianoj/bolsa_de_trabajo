@@ -1,9 +1,9 @@
+import 'package:bolsa_de_trabajo/models/JobOfferApplication.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/components/itemCardJobOfferApplicant.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/details/detailsScreenJobOfferApplicant.dart';
+import 'package:bolsa_de_trabajo/screens/applicant/components/itemJobOfferApplied.dart';
+import 'package:bolsa_de_trabajo/screens/applicant/details/detailsJobOfferApplied.dart';
 import 'package:bolsa_de_trabajo/services/reportServicies.dart';
 import 'package:flutter/material.dart';
-import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 
 class BodyApplied extends StatelessWidget{  
@@ -21,53 +21,37 @@ class BodyApplied extends StatelessWidget{
           height: 700,
           fit: BoxFit.cover,
         ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 1),
-                child: FutureBuilder(                  
-                  future: jobOfferService.getJobOfferAll(),
-                  builder: (context, snapshot) {
-                    if(snapshot.hasData){
-                      List<JobOffer>? jobofferlist = [];
-                      var list = snapshot.data;
-                      jobofferlist = snapshot.data as List<JobOffer>?;
-                      return GridView.builder(
-                          itemCount: amountListJobOffer(snapshot.data),
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            mainAxisSpacing: kDefaultPaddin/3,
-                            crossAxisSpacing: kDefaultPaddin/3,
-                            childAspectRatio: 0.75,
-                          ),
-                          itemBuilder: (context, index) => ItemCardJobOfferApplicant(
-                            loginForm: loginForm,
-                            jobOffer: jobofferlist![index],
-                            press: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => DetailsScreenJobOfferApplicant(
-                                  loginForm: loginForm,
-                                  jobOffer: jobofferlist![index],
-                                ),
-                              ),
-                            ),
-                          ),
-                        );
-                    }else if(snapshot.hasError){
-                      print(snapshot.error);
-                      return Text("Error al traer joboffers");
-                    }
+        FutureBuilder(                  
+          future: reportService.getJobOfferApplied(loginForm),
+          builder: (context, snapshot) {
+            if(snapshot.hasData){
+              List<JobOfferApplication>? jobOfferAppList = [];
+              jobOfferAppList = snapshot.data as List<JobOfferApplication>?;
+              return ListView.builder(
+                  itemCount: amountListJobOffer(snapshot.data),                  
+                  itemBuilder: (context, index) => ItemJobOfferApplied(
+                    loginForm: loginForm,
+                    jobOfferApp: jobOfferAppList![index],
+                    /*press: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailsJobOfferApplied(
+                          loginForm: loginForm,
+                          jobOfferApp: jobOfferAppList![index],
+                        ),
+                      ),
+                    ),*/
+                  ),
+                );
+            }else if(snapshot.hasError){
+              print(snapshot.error);
+              return Text("Error al traer jobofferApplied");
+            }
 
-                    return Center(child: CircularProgressIndicator(),);
-                  },
-                ),
-              ),
-            ),
-          ],
+            return Center(child: CircularProgressIndicator(),);
+          },
         ),
+        
       ],
     );
     

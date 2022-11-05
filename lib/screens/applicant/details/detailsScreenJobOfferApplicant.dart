@@ -18,7 +18,7 @@ class DetailsScreenJobOfferApplicant extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.teal,
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(

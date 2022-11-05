@@ -1,4 +1,5 @@
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
+import 'package:bolsa_de_trabajo/screens/applicant/applied.dart';
 import 'package:bolsa_de_trabajo/screens/home/home.dart';
 import 'package:bolsa_de_trabajo/screens/applicant/components/bodyHomeApplicant.dart';
 import 'package:flutter/material.dart';
@@ -32,14 +33,14 @@ class HomeApplicant extends StatelessWidget{
             color: kTextColor,
           ),
           onPressed: () {
-            /*Navigator.push(
+            Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => Applied(
-                  context,
+                  loginForm: loginForm,
                 ),
               ),
-            );*/
+            );
           },
         ),
         IconButton(

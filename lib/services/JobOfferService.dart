@@ -3,8 +3,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class JobOfferService {
-  var data;
-
   Future<List<JobOffer>> getJobOfferAll() async{
     var url = Uri.parse('http://10.0.2.2:8082/joboffer/');
     var records = <JobOffer>[];
@@ -16,13 +14,11 @@ class JobOfferService {
       for (var item in jsonData){
         joboffers.add(
           JobOffer(id: item["id"], title: item["title"], description: item["description"], area: item["area"], experience: item["experience"], modality: item["modality"], position: item["position"], category: item["category"], body: item["body"]));
-
       }
       return joboffers;
     }else{
       throw Exception("Fallo traer la lista de Joboffers");
-    }
-    
+    }    
   }
 
 }
