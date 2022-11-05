@@ -1,7 +1,5 @@
 import 'dart:convert';
-import 'dart:ffi';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
-import 'package:bolsa_de_trabajo/screens/home/home.dart';
 import 'package:bolsa_de_trabajo/screens/applicant/homeApplicant.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
