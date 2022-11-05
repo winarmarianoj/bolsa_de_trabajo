@@ -137,11 +137,11 @@ class ProductJobOfferApplicant extends StatelessWidget {
                   margin: EdgeInsets.only(top: size.height * 0.04),
                   padding: EdgeInsets.only(
                     top: size.height * 0.04,
-                    left: kDefaultPaddin*5,
-                    right: kDefaultPaddin/2,
+                    left: 170,
+                    right: 0,
                   ),
-                  height: 210,
-                  width: 240,
+                  height: 230,
+                  width: 330,
                    decoration: const BoxDecoration(
                     color: kFondo,
                     borderRadius: BorderRadius.only(
@@ -155,8 +155,8 @@ class ProductJobOfferApplicant extends StatelessWidget {
                     icon: 
                     Image.asset(
                       "assets/images/apply.png",
-                        width: 110,
-                        height: 110,
+                        width: 70,
+                        height: 70,
                         fit: BoxFit.cover,
                     ),
                     onPressed: () {
