@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:bolsa_de_trabajo/screens/home/home.dart';
 import 'package:bolsa_de_trabajo/screens/applicant/homeApplicant.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/homePublisher.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -31,7 +32,7 @@ class AuthenticationService {
       if(loginForm.role == "APPLICANT"){
         Navigator.push(context, MaterialPageRoute(builder: ((context) => HomeApplicant(loginForm: loginForm,)))); 
       }else if(loginForm.role == "PUBLISHER"){
-        Navigator.push(context, MaterialPageRoute(builder: ((context) => Home())));
+        Navigator.push(context, MaterialPageRoute(builder: ((context) => HomePublisher(loginForm: loginForm,))));
       }else if(loginForm.role == "UTN"){
         Navigator.push(context, MaterialPageRoute(builder: ((context) => Home())));
       } 

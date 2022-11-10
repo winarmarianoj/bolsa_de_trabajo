@@ -1,13 +1,13 @@
 import 'package:bolsa_de_trabajo/models/JobOfferApplication.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/details/detailsJobOfferApplied.dart';
+import 'package:bolsa_de_trabajo/screens/applicant/applied/details/detailsJobOfferApplied.dart';
 import 'package:flutter/material.dart';
 
-class ItemJobOfferApplied extends StatelessWidget {
+class ApplicantAppliedList extends StatelessWidget {
   final JobOfferApplication jobOfferApp;
   final LoginFormProvider loginForm;
   final VoidCallback? press;
-  const ItemJobOfferApplied({
+  const ApplicantAppliedList({
     Key? key,
     required this.jobOfferApp,
     required this.loginForm,

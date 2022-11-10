@@ -1,6 +1,6 @@
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/details/components/detailsBodyJobOfferApplicant.dart';
+import 'package:bolsa_de_trabajo/screens/applicant/home/details/components/detailsBodyJobOfferApplicant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

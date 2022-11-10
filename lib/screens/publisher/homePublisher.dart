@@ -1,51 +1,64 @@
-import 'package:bolsa_de_trabajo/models/JobOfferApplication.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/details/components/detailsBodyJobOfferApplied.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/homeApplicant.dart';
+import 'package:bolsa_de_trabajo/screens/home/home.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/home/components/bodyHomePublisher.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/published.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 
-class DetailsJobOfferApplied extends StatelessWidget {
-  final JobOfferApplication jobOfferApp;
-  final LoginFormProvider loginForm;
-  const DetailsJobOfferApplied({Key? key, required this.jobOfferApp, required this.loginForm}) : super(key: key);
+class HomePublisher extends StatelessWidget{ 
+  final LoginFormProvider loginForm; 
+  const HomePublisher({Key? key, required this.loginForm}) : super(key: key);
+    
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: DetailsBodyJobOfferApplied(jobOfferApp: jobOfferApp, loginForm: loginForm),
+      body: BodyHomePublisher(loginForm: loginForm,), 
     );
   }
 
-  AppBar buildAppBar(BuildContext context) {
+  AppBar buildAppBar(BuildContext context){
     return AppBar(
-      backgroundColor: Colors.teal,
+      backgroundColor: Color.fromARGB(255, 228, 137, 2),
       elevation: 0,
       leading: IconButton(
-        icon: SvgPicture.asset(
-          'assets/icons/back.svg',
-          color: Colors.white,
-        ),
-        onPressed: () => Navigator.pop(context),
+        icon: SvgPicture.asset("assets/icons/back.svg"),
+        onPressed: () {},
       ),
-      actions: <Widget>[    
+      actions: <Widget>[
         IconButton(
           icon: SvgPicture.asset(
-            "assets/icons/home.svg",
+            "assets/icons/list.svg",
             color: kTextColor,
           ),
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeApplicant(
+                builder: (context) => Published(
                   loginForm: loginForm,
                 ),
               ),
             );
           },
-        ),    
+        ),
+        IconButton(
+          icon: SvgPicture.asset(
+            "assets/icons/publicar.svg",
+            color: kTextColor,
+          ),
+          onPressed: () {
+            /*Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Publish(
+                  loginForm: loginForm,
+                ),
+              ),
+            );*/
+          },
+        ),
         IconButton(
           icon: SvgPicture.asset(
             "assets/icons/profile.svg",
@@ -55,7 +68,7 @@ class DetailsJobOfferApplied extends StatelessWidget {
             /*Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ProfileApplicant(
+                builder: (context) => ProfilePublisher(
                   context,
                 ),
               ),
@@ -71,7 +84,7 @@ class DetailsJobOfferApplied extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeApplicant(loginForm: loginForm,),
+                builder: (context) => Home(),
               ),
             );
           },
@@ -80,4 +93,5 @@ class DetailsJobOfferApplied extends StatelessWidget {
       ],
     );
   }
+
 }

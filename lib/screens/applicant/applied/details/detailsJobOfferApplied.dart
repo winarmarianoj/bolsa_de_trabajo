@@ -1,32 +1,35 @@
+import 'package:bolsa_de_trabajo/models/JobOfferApplication.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
+import 'package:bolsa_de_trabajo/screens/applicant/applied/details/components/detailsBodyJobOfferApplied.dart';
 import 'package:bolsa_de_trabajo/screens/applicant/homeApplicant.dart';
-import 'package:bolsa_de_trabajo/screens/home/home.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/applied/components/bodyApplied.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 
-class Applied extends StatelessWidget{ 
-  final LoginFormProvider loginForm; 
-  const Applied({Key? key, required this.loginForm}) : super(key: key);
-    
+class DetailsJobOfferApplied extends StatelessWidget {
+  final JobOfferApplication jobOfferApp;
+  final LoginFormProvider loginForm;
+  const DetailsJobOfferApplied({Key? key, required this.jobOfferApp, required this.loginForm}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: BodyApplied(loginForm: loginForm,),
+      body: DetailsBodyJobOfferApplied(jobOfferApp: jobOfferApp, loginForm: loginForm),
     );
   }
 
-  AppBar buildAppBar(BuildContext context){
+  AppBar buildAppBar(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.teal,
       elevation: 0,
       leading: IconButton(
-        icon: SvgPicture.asset("assets/icons/back.svg"),
+        icon: SvgPicture.asset(
+          'assets/icons/back.svg',
+          color: Colors.white,
+        ),
         onPressed: () => Navigator.pop(context),
       ),
-      actions: <Widget>[
+      actions: <Widget>[    
         IconButton(
           icon: SvgPicture.asset(
             "assets/icons/home.svg",
@@ -42,7 +45,7 @@ class Applied extends StatelessWidget{
               ),
             );
           },
-        ),
+        ),    
         IconButton(
           icon: SvgPicture.asset(
             "assets/icons/profile.svg",
@@ -68,7 +71,7 @@ class Applied extends StatelessWidget{
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => Home(),
+                builder: (context) => HomeApplicant(loginForm: loginForm,),
               ),
             );
           },
@@ -77,5 +80,4 @@ class Applied extends StatelessWidget{
       ],
     );
   }
-
 }

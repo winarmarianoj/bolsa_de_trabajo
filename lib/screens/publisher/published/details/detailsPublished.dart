@@ -1,29 +1,33 @@
+import 'package:bolsa_de_trabajo/models/JobOffer.dart';
+import 'package:bolsa_de_trabajo/models/JobOfferApplication.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/homeApplicant.dart';
 import 'package:bolsa_de_trabajo/screens/home/home.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/applied/components/bodyApplied.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/homePublisher.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/published/details/components/detailsBodyPublished.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 
-class Applied extends StatelessWidget{ 
-  final LoginFormProvider loginForm; 
-  const Applied({Key? key, required this.loginForm}) : super(key: key);
-    
+class DetailsPublished extends StatelessWidget {
+  final JobOffer jobOfferApp;
+  final LoginFormProvider loginForm;
+  const DetailsPublished({Key? key, required this.jobOfferApp, required this.loginForm}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: BodyApplied(loginForm: loginForm,),
+      body: DetailsBodyPublished(jobOfferApp: jobOfferApp, loginForm: loginForm),
     );
   }
 
-  AppBar buildAppBar(BuildContext context){
+  AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.teal,
+      backgroundColor: Color.fromARGB(255, 223, 134, 1),
       elevation: 0,
       leading: IconButton(
-        icon: SvgPicture.asset("assets/icons/back.svg"),
+        icon: SvgPicture.asset('assets/icons/back.svg',
+          color: Colors.white,
+        ),
         onPressed: () => Navigator.pop(context),
       ),
       actions: <Widget>[
@@ -36,11 +40,27 @@ class Applied extends StatelessWidget{
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeApplicant(
+                builder: (context) => HomePublisher(
                   loginForm: loginForm,
                 ),
               ),
             );
+          },
+        ),
+        IconButton(
+          icon: SvgPicture.asset(
+            "assets/icons/publicar.svg",
+            color: kTextColor,
+          ),
+          onPressed: () {
+            /*Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Publish(
+                  loginForm: loginForm,
+                ),
+              ),
+            );*/
           },
         ),
         IconButton(
@@ -52,7 +72,7 @@ class Applied extends StatelessWidget{
             /*Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ProfileApplicant(
+                builder: (context) => ProfilePublisher(
                   context,
                 ),
               ),
@@ -77,5 +97,4 @@ class Applied extends StatelessWidget{
       ],
     );
   }
-
 }

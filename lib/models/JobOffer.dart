@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 class JobOffer {
-  final String title, description, area, experience, modality, position, category, body;
-  final String? datePublished, modifiedDay, deletedDay, message, state;
+  final String title, description, area, experience, modality, position, category, body,
+  datePublished, modifiedDay, deletedDay, message, state;
   final int id;
   final bool? deleted;
-  final Color? color;
 
   JobOffer({
     required this.id,
@@ -17,13 +16,12 @@ class JobOffer {
     required this.modality,
     required this.position,
     required this.category,
-    this.datePublished,
-    this.modifiedDay,
-    this.deletedDay,
-    this.deleted,
-    this.state,
-    this.message,
-    this.color,
+    required this.datePublished,
+    required this.modifiedDay,
+    required this.deletedDay,
+    required this.deleted,
+    required this.state,
+    required this.message,
   });
   
   factory JobOffer.fromJson(Map<String, dynamic> json) {    
@@ -42,7 +40,6 @@ class JobOffer {
         deletedDay: json['deletedDay'],
         deleted: json['deleted'],
         state: json['state'],
-        message: json['message'],                      
-        color: Color(int.parse(json['color'])));
+        message: json['message']);
   }
 }

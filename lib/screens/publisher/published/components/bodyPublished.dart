@@ -1,14 +1,13 @@
+import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/models/JobOfferApplication.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/components/itemJobOfferApplied.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/details/detailsJobOfferApplied.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/published/components/publisherJobOfferList.dart';
 import 'package:bolsa_de_trabajo/services/reportServicies.dart';
 import 'package:flutter/material.dart';
-import 'package:bolsa_de_trabajo/constant/constant.dart';
 
-class BodyApplied extends StatelessWidget{  
+class BodyPublished extends StatelessWidget{  
   final LoginFormProvider loginForm;
-  const BodyApplied({Key? key, required this.loginForm}) : super(key: key);  
+  const BodyPublished({Key? key, required this.loginForm}) : super(key: key);  
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +21,14 @@ class BodyApplied extends StatelessWidget{
           fit: BoxFit.cover,
         ),
         FutureBuilder(                  
-          future: reportService.getJobOfferApplied(loginForm),
+          future: reportService.getJobOfferPublished(loginForm),
           builder: (context, snapshot) {
             if(snapshot.hasData){
-              List<JobOfferApplication>? jobOfferAppList = [];
-              jobOfferAppList = snapshot.data as List<JobOfferApplication>?;
+              List<JobOffer>? jobOfferAppList = [];
+              jobOfferAppList = snapshot.data as List<JobOffer>?;
               return ListView.builder(
                   itemCount: amountListJobOffer(snapshot.data),                  
-                  itemBuilder: (context, index) => ItemJobOfferApplied(
+                  itemBuilder: (context, index) => PublisherJobOfferList(
                     loginForm: loginForm,
                     jobOfferApp: jobOfferAppList![index],
                     /*press: () => Navigator.push(

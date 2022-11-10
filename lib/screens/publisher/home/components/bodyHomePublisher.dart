@@ -1,18 +1,15 @@
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/components/itemCardJobOfferApplicant.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/details/detailsJobOfferApplied.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/details/detailsScreenJobOfferApplicant.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/home/components/itemCardPublisher.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/home/details/detailsScreenPublisher.dart';
 import 'package:flutter/material.dart';
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/services/jobOfferService.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 
-class BodyHomeApplicant extends StatelessWidget{  
+class BodyHomePublisher extends StatelessWidget{  
   final LoginFormProvider loginForm;
-  const BodyHomeApplicant({Key? key, required this.loginForm}) : super(key: key);  
+  const BodyHomePublisher({Key? key, required this.loginForm}) : super(key: key);  
  
-  //final Future<List<JobOffer>>? futureJobOffer; 
-
   @override
   Widget build(BuildContext context) {
     final JobOfferService jobOfferService = new JobOfferService();    
@@ -44,14 +41,12 @@ class BodyHomeApplicant extends StatelessWidget{
                             crossAxisSpacing: kDefaultPaddin/3,
                             childAspectRatio: 0.75,
                           ),
-                          itemBuilder: (context, index) => ItemCardJobOfferApplicant(
-                            loginForm: loginForm,
+                          itemBuilder: (context, index) => ItemCardPublisher(
                             jobOffer: jobofferlist![index],
                             press: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => DetailsScreenJobOfferApplicant(
-                                  loginForm: loginForm,
+                                builder: (context) => DetailsScreenPublisher(
                                   jobOffer: jobofferlist![index],
                                 ),
                               ),

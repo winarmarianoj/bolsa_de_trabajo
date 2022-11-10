@@ -1,7 +1,7 @@
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/details/components/descriptionJobOfferApplicant.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/details/components/productJobOfferApplicant.dart';
+import 'package:bolsa_de_trabajo/screens/applicant/home/details/components/descriptionJobOfferApplicant.dart';
+import 'package:bolsa_de_trabajo/screens/applicant/home/details/components/productJobOfferApplicant.dart';
 import 'package:flutter/material.dart';
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 

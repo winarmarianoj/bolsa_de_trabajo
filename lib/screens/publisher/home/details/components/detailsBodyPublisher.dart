@@ -1,13 +1,14 @@
 import 'package:bolsa_de_trabajo/constant/constant.dart';
-import 'package:bolsa_de_trabajo/models/JobOfferApplication.dart';
-import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
-import 'package:bolsa_de_trabajo/screens/applicant/details/components/productJobOfferApplied.dart';
+import 'package:bolsa_de_trabajo/screens/home/details/components/descriptionJobOffer.dart';
+import 'package:bolsa_de_trabajo/screens/home/details/components/productJobOffer.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/home/details/components/descriptionPublisher.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/home/details/components/productPublisher.dart';
 import 'package:flutter/material.dart';
+import 'package:bolsa_de_trabajo/models/JobOffer.dart';
+class DetailsBodyJobOfferPublisher extends StatelessWidget {
+  final JobOffer jobOffer;
 
-class DetailsBodyJobOfferApplied extends StatelessWidget {
-  final JobOfferApplication jobOfferApp;
-  final LoginFormProvider loginForm;
-  const DetailsBodyJobOfferApplied({Key? key, required this.jobOfferApp, required this.loginForm}) : super(key: key);
+  const DetailsBodyJobOfferPublisher({Key? key, required this.jobOffer}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     // It provide us total height and width
@@ -22,7 +23,7 @@ class DetailsBodyJobOfferApplied extends StatelessWidget {
                 Image.asset(
                   "assets/images/cielo.jpg",
                   width: 500,
-                  height: 900,
+                  height: 800,
                   fit: BoxFit.cover,
                 ),
                 Container(
@@ -32,9 +33,9 @@ class DetailsBodyJobOfferApplied extends StatelessWidget {
                     left: kDefaultPaddin/2,
                     right: kDefaultPaddin/2,
                   ),
-                  height: 800,
+                  height: 700,
                    decoration: const BoxDecoration(
-                    color: detailJobOfferApplied,
+                    color: kFondo,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(40),
                       topRight: Radius.circular(40),
@@ -44,9 +45,9 @@ class DetailsBodyJobOfferApplied extends StatelessWidget {
                   ),
                   child: Column(
                     children: <Widget>[                                            
-                      //DescriptionJobOfferApplicant(jobOfferApp: jobOfferApp),
+                      DescriptionPublisher(jobOffer: jobOffer),
                       const SizedBox(height: kDefaultPaddin / 2),                                  
-                      ProductJobOfferApplied(jobOfferApp: jobOfferApp, loginForm: loginForm),
+                      ProductPublisher(jobOffer: jobOffer),
                       const SizedBox(height: kDefaultPaddin / 2),
                     ],
                   ),                  
