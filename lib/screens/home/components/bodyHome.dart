@@ -74,73 +74,103 @@ class HomeState extends State<BodyHome>{
                 ),
               ),
             ),
-
-Positioned(
-          bottom: 0.0,
-          left: 0.0,
-          right: 0.0,
-          child: Container(
-            color: Colors.black,
-            child: Row(
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      style: const TextStyle(color: cardTitle, fontWeight: FontWeight.bold),
-                      "Bienvenido a la Bolsa de Trabajo hecha y suministrada por Centro Universitario Vicente Lopez en conjunto con la Universidad Técnica Nacional de Buenos Aires.",
-                    ),
+            Positioned(
+                bottom: 0.0,
+                left: 0.0,
+                right: 0.0,
+                child: Container(
+                  color: Colors.black,
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        "assets/images/logCuvl.png",
+                          width: 90,
+                          height: 30,
+                          fit: BoxFit.cover,
+                      ),
+                      Column(
+                        children:  <Widget> [
+                          const SizedBox(height: kDefaultPaddin/2),
+                          RichText(
+                            text: TextSpan(
+                              children: [ 
+                                TextSpan(
+                                  text: "Address: ",
+                                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                      color: Colors.white, fontWeight: FontWeight.bold),
+                                ),               
+                                TextSpan(
+                                  text: "Carlos Villate 4480, Munro, Buenos Aires",
+                                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                      color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: kDefaultPaddin/2),
+                          RichText(
+                                text: TextSpan(
+                                  children: [ 
+                                    TextSpan(
+                                      text: "Email: ",
+                                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                          color: Colors.white, fontWeight: FontWeight.bold),
+                                    ),               
+                                    TextSpan(
+                                      text: "bolsa.de.trabajo.utn.test@gmail.com",
+                                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                          const SizedBox(height: kDefaultPaddin/2),
+                          RichText(
+                                text: TextSpan(
+                                  children: [ 
+                                    TextSpan(
+                                      text: "Phones: ",
+                                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                          color: Colors.white, fontWeight: FontWeight.bold),
+                                    ),               
+                                    TextSpan(
+                                      text: "5197-1515 / 5197-1154",
+                                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                          const SizedBox(height: kDefaultPaddin/2),
+                          RichText(
+                                text: TextSpan(
+                                  children: [ 
+                                    TextSpan(
+                                      text: "",
+                                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                          color: Colors.white, fontWeight: FontWeight.bold),
+                                    ),               
+                                    TextSpan(
+                                      text: "https://www.vicentelopez.gov.ar/centrouniversitariovl",
+                                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                          const SizedBox(height: kDefaultPaddin/2),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
-          ),
-        ),
-
+              ),
           ],
         ),
                
       ],
     );
-    
-    
-    /*Scaffold(
-      backgroundColor: Colors.deepOrange,
-      body: FutureBuilder(
-        future: futureJobOffer,
-        builder: (context, snapshot) {
-          if(snapshot.hasData){
-            return GridView.count(
-              crossAxisCount: 2,
-              children: listSnapshot(snapshot.data),
-            );
-          }else if(snapshot.hasError){
-            print(snapshot.error);
-            return Text("Error al traer joboffers");
-          }
-
-          return Center(child: CircularProgressIndicator(),);
-        },
-      ),
-    );*/
-
-
-  }
-
-  /*List<Widget> listSnapshot(List<JobOffer> info){
-    List<Widget> list = [];
-    for (var joboffer in info) {
-      list.add(Card(child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(joboffer.title),
-            ),          
-        ],
-      ),));     
-    }
-    return list;
-  }*/
+  } 
 
   List<Widget> listSnapshot(info){
     List<Widget> list = [];
@@ -169,17 +199,4 @@ Positioned(
     }
     return count;
   }
-
-
-  /*List<Widget> listado(List<JobOffer> info){
-    List<Widget> list = [];
-    for (var data in info) {
-      ItemCardJobOffer(joboffer: data);
-      
-      list.add(Text(data.title));
-      list.add(Text(data.description));
-    }
-    return list;
-
-  }*/
 }
