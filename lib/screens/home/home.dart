@@ -22,7 +22,7 @@ class Home extends StatelessWidget{
       elevation: 10,
       leading: SvgPicture.asset(
         "assets/icons/logoUtnNegro.svg",
-        fit: BoxFit.fitHeight,
+        fit: BoxFit.fill,
       ),
       actions: <Widget>[
         IconButton(

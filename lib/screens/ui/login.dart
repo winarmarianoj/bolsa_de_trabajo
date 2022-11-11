@@ -33,7 +33,7 @@ class Login extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 50),
+              /*const SizedBox(height: 50),
               const Text(
                 'Crear una nueva cuenta',
                 style: TextStyle(
@@ -41,7 +41,7 @@ class Login extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 50),*/
             ],
           ),
         ),

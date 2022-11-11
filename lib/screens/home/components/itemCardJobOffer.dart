@@ -32,19 +32,13 @@ class ItemCardJobOffer extends StatelessWidget {
               bottomRight: Radius.circular(20),
             ),
           ),
-        /*child: Card(
-          //color: Color.fromARGB(230, 255, 255, 255),        
-          
-        ),*/
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Center(
-                child: Padding(
-                  //padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin / 4),
+                child: Padding(                  
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    // products is out demo list
                     jobOffer!.title,
                     style: const TextStyle(color: cardTitle, fontWeight: FontWeight.bold),
                   ),

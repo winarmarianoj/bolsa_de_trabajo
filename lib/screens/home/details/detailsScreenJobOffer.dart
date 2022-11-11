@@ -17,7 +17,7 @@ class DetailsScreenJobOffer extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.black87,
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(
@@ -26,13 +26,6 @@ class DetailsScreenJobOffer extends StatelessWidget {
         ),
         onPressed: () => Navigator.pop(context),
       ),
-      /*actions: <Widget>[
-        IconButton(
-          icon: SvgPicture.asset("assets/icons/search.svg"),
-          onPressed: () {},
-        ),
-        const SizedBox(width: kDefaultPaddin / 2)
-      ],*/
     );
   }
 }

@@ -8,14 +8,47 @@ class AuthBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //  color: Colors.red,
+      //color: Colors.black,
+      
       width: double.infinity,
       height: double.infinity,
-      child: Stack(
+      /*child: Stack(
         children: [
           _PurpleBox(),
           _HeaderIcon(),
           this.child,
+        ],
+      ),*/
+      child: Column(
+        children: [
+          /*Image.asset("assets/images/fondo.png",
+          width: 400,
+          height: 370,
+          fit: BoxFit.fill,
+          ),*/
+          Stack(
+            children: [
+              _PurpleBox(),
+              _HeaderIcon(),
+              this.child,
+            ],
+          ),
+          Padding(padding: const EdgeInsets.all(8.0),
+            child: Center(
+                  child: Image.asset("assets/images/logCuvl.png", 
+                  width: 240,
+                  height: 70,
+                  fit: BoxFit.cover,)
+                ),
+          ),
+          Padding(padding: const EdgeInsets.all(8.0),
+            child: Center(
+                  child: Image.asset("assets/images/logo-utn.ba.png",
+                   width: 240,
+                    height: 70,
+                    fit: BoxFit.cover,)
+                ),
+          ),
         ],
       ),
     );
@@ -64,7 +97,7 @@ class _PurpleBox extends StatelessWidget {
   BoxDecoration _purpleBackground() => BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color.fromRGBO(63, 63, 156, 1),
+            Color.fromARGB(255, 79, 156, 63),
             Color.fromRGBO(90, 70, 178, 1)
           ],
         ),
