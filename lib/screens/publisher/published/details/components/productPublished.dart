@@ -1,15 +1,15 @@
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
-import 'package:bolsa_de_trabajo/models/JobOfferApplication.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/subscribed.dart';
 import 'package:flutter/material.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 
 class ProductPublished extends StatelessWidget {
-  final JobOffer jobOfferApp;
+  final JobOffer jobOffer;
   final LoginFormProvider loginForm;  
   const ProductPublished({
     Key? key,
-    required this.jobOfferApp, required this.loginForm,
+    required this.jobOffer, required this.loginForm,
   }) : super(key: key);  
 
   @override
@@ -30,7 +30,7 @@ class ProductPublished extends StatelessWidget {
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
-                      text: jobOfferApp.id.toString(),
+                      text: jobOffer.id.toString(),
                       style: Theme.of(context).textTheme.headline5?.copyWith(
                           color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
                     ),
@@ -47,7 +47,7 @@ class ProductPublished extends StatelessWidget {
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
-                      text: jobOfferApp.title,
+                      text: jobOffer.title,
                       style: Theme.of(context).textTheme.headline5?.copyWith(
                           color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
                     ),
@@ -64,7 +64,7 @@ class ProductPublished extends StatelessWidget {
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
-                      text: jobOfferApp.description,
+                      text: jobOffer.description,
                       style: Theme.of(context).textTheme.headline5?.copyWith(
                           color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
                     ),
@@ -81,7 +81,7 @@ class ProductPublished extends StatelessWidget {
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
-                      text: jobOfferApp.area,
+                      text: jobOffer.area,
                       style: Theme.of(context).textTheme.headline5?.copyWith(
                           color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
                     ),
@@ -98,7 +98,7 @@ class ProductPublished extends StatelessWidget {
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
-                      text: jobOfferApp.body,
+                      text: jobOffer.body,
                       style: Theme.of(context).textTheme.headline5?.copyWith(
                           color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
                     ),
@@ -115,7 +115,7 @@ class ProductPublished extends StatelessWidget {
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
-                      text: jobOfferApp.experience,
+                      text: jobOffer.experience,
                       style: Theme.of(context).textTheme.headline5?.copyWith(
                           color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
                     ),
@@ -132,7 +132,7 @@ class ProductPublished extends StatelessWidget {
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
-                      text: jobOfferApp.modality,
+                      text: jobOffer.modality,
                       style: Theme.of(context).textTheme.headline5?.copyWith(
                           color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
                     ),
@@ -149,7 +149,7 @@ class ProductPublished extends StatelessWidget {
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
-                      text: jobOfferApp.position,
+                      text: jobOffer.position,
                       style: Theme.of(context).textTheme.headline5?.copyWith(
                           color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
                     ),
@@ -158,21 +158,64 @@ class ProductPublished extends StatelessWidget {
               ),
           const SizedBox(height: kDefaultPaddin/2),
           RichText(
-                text: TextSpan(
-                  children: [ 
-                    TextSpan(
-                      text: "Category: ",
-                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),               
-                    TextSpan(
-                      text: jobOfferApp.category,
-                      style: Theme.of(context).textTheme.headline5?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
-                    ),
-                  ],
+            text: TextSpan(
+              children: [ 
+                TextSpan(
+                  text: "Category: ",
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),               
+                TextSpan(
+                  text: jobOffer.category,
+                  style: Theme.of(context).textTheme.headline5?.copyWith(
+                      color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
                 ),
-              ),              
+              ],
+            ),
+          ),
+          Row(            
+            children: <Widget>[              
+              Container(
+                  margin: EdgeInsets.only(top: size.height * 0.04),
+                  padding: EdgeInsets.only(
+                    top: size.height * 0.04,
+                    left: 170,
+                    right: 0,
+                  ),
+                  height: 230,
+                  width: 330,
+                   decoration: const BoxDecoration(
+                    //color: kFondo,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      topRight: Radius.circular(40),
+                      bottomLeft: Radius.circular(40),
+                      bottomRight: Radius.circular(40),
+                    ),
+                  ),
+                  child: IconButton(
+                    icon: 
+                    Image.asset(
+                      "assets/images/subscribers.png",
+                        width: 70,
+                        height: 70,
+                        fit: BoxFit.cover,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Subscribed(
+                            loginForm: loginForm,
+                            jobOffer: jobOffer,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+            ],
+          ),   
         ],
       ),
     );

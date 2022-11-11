@@ -16,7 +16,7 @@ class DetailsScreenPublisher extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Color.fromARGB(255, 99, 3, 224),
+      backgroundColor: Color.fromARGB(255, 228, 137, 2),
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(
@@ -24,14 +24,7 @@ class DetailsScreenPublisher extends StatelessWidget {
           color: Colors.white,
         ),
         onPressed: () => Navigator.pop(context),
-      ),
-      /*actions: <Widget>[
-        IconButton(
-          icon: SvgPicture.asset("assets/icons/search.svg"),
-          onPressed: () {},
-        ),
-        const SizedBox(width: kDefaultPaddin / 2)
-      ],*/
+      ),     
     );
   }
 }

@@ -1,16 +1,15 @@
 import 'package:bolsa_de_trabajo/constant/constant.dart';
-import 'package:bolsa_de_trabajo/models/JobOffer.dart';
+import 'package:bolsa_de_trabajo/models/JobOfferApplication.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
-import 'package:bolsa_de_trabajo/screens/publisher/published/details/components/productPublished.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/subscribed/details/components/productSubscribed.dart';
 import 'package:flutter/material.dart';
 
-class DetailsBodyPublished extends StatelessWidget {
-  final JobOffer jobOffer;
+class DetailsBodySubscribed extends StatelessWidget {
+  final JobOfferApplication jobOfferApp;
   final LoginFormProvider loginForm;
-  const DetailsBodyPublished({Key? key, required this.jobOffer, required this.loginForm}) : super(key: key);
+  const DetailsBodySubscribed({Key? key, required this.jobOfferApp, required this.loginForm}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    // It provide us total height and width
     Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(      
       child: Column(
@@ -22,31 +21,30 @@ class DetailsBodyPublished extends StatelessWidget {
                 Image.asset(
                   "assets/images/cielo.jpg",
                   width: 500,
-                  height: 900,
-                  fit: BoxFit.cover,
+                  height: 1400,
+                  fit: BoxFit.fitHeight,
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: size.height * 0.04),
+                  margin: EdgeInsets.only(top: size.height * 0.001),
                   padding: EdgeInsets.only(
-                    top: size.height * 0.04,
+                    top: size.height * 0.001,
                     left: kDefaultPaddin/2,
                     right: kDefaultPaddin/2,
                   ),
-                  height: 800,
+                  height: 1400,
+                  width: 500,
                    decoration: const BoxDecoration(
                     color: detailJobOfferApplied,
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(40),
-                      topRight: Radius.circular(40),
-                      bottomLeft: Radius.circular(40),
-                      bottomRight: Radius.circular(40),
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
+                      bottomLeft: Radius.circular(30),
+                      bottomRight: Radius.circular(30),
                     ),
                   ),
                   child: Column(
-                    children: <Widget>[  
-                      const SizedBox(height: kDefaultPaddin / 2),                                  
-                      ProductPublished(jobOffer: jobOffer, loginForm: loginForm),
-                      const SizedBox(height: kDefaultPaddin / 2),
+                    children: <Widget>[ 
+                      ProductSubscribed(jobOfferApp: jobOfferApp, loginForm: loginForm),
                     ],
                   ),                  
                 ),

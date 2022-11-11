@@ -1,24 +1,23 @@
-import 'package:bolsa_de_trabajo/models/JobOffer.dart';
+import 'package:bolsa_de_trabajo/models/JobOfferApplication.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:bolsa_de_trabajo/screens/home/home.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/homePublisher.dart';
-import 'package:bolsa_de_trabajo/screens/publisher/published/details/components/detailsBodyPublished.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/subscribed/details/components/detailsBodySubscribed.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 
-class DetailsPublished extends StatelessWidget {
-  final JobOffer jobOffer;
+class DetailsSubscribed extends StatelessWidget {
+  final JobOfferApplication jobOfferApp;
   final LoginFormProvider loginForm;
-  const DetailsPublished({Key? key, required this.jobOffer, required this.loginForm}) : super(key: key);
+  const DetailsSubscribed({Key? key, required this.jobOfferApp, required this.loginForm}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: DetailsBodyPublished(jobOffer: jobOffer, loginForm: loginForm),
+      body: DetailsBodySubscribed(jobOfferApp: jobOfferApp, loginForm: loginForm),
     );
   }
-
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
       backgroundColor: Color.fromARGB(255, 223, 134, 1),

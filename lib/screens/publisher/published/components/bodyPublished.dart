@@ -1,5 +1,4 @@
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
-import 'package:bolsa_de_trabajo/models/JobOfferApplication.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/published/components/publisherJobOfferList.dart';
 import 'package:bolsa_de_trabajo/services/reportServicies.dart';
@@ -30,18 +29,9 @@ class BodyPublished extends StatelessWidget{
                   itemCount: amountListJobOffer(snapshot.data),                  
                   itemBuilder: (context, index) => PublisherJobOfferList(
                     loginForm: loginForm,
-                    jobOfferApp: jobOfferAppList![index],
-                    /*press: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DetailsJobOfferApplied(
-                          loginForm: loginForm,
-                          jobOfferApp: jobOfferAppList![index],
-                        ),
-                      ),
-                    ),*/
+                    jobOffer: jobOfferAppList![index],
                   ),
-                );
+                );                
             }else if(snapshot.hasError){
               print(snapshot.error);
               return Text("Error al traer jobofferApplied");
@@ -50,8 +40,27 @@ class BodyPublished extends StatelessWidget{
             return Center(child: CircularProgressIndicator(),);
           },
         ),
-        
-      ],
+        Positioned(
+          bottom: 0.0,
+          left: 0.0,
+          right: 0.0,
+          child: Container(
+            color: Colors.white,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      decoration: InputDecoration(hintText: "Ingresa texto aquí"),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),        
+      ]
     );
     
   }

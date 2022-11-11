@@ -1,45 +1,63 @@
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
-import 'package:bolsa_de_trabajo/screens/home/home.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/homePublisher.dart';
-import 'package:bolsa_de_trabajo/screens/publisher/published/details/components/detailsBodyPublished.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/published.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 
-class DetailsPublished extends StatelessWidget {
+class MessageError extends StatelessWidget{  
   final JobOffer jobOffer;
-  final LoginFormProvider loginForm;
-  const DetailsPublished({Key? key, required this.jobOffer, required this.loginForm}) : super(key: key);
+  final LoginFormProvider loginForm; 
+  const MessageError({Key? key, required this.jobOffer, required this.loginForm}) : super(key: key);  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: DetailsBodyPublished(jobOffer: jobOffer, loginForm: loginForm),
+      body: Center(
+        child: Card(
+          color: Colors.black,
+          child: RichText(
+            text: TextSpan(
+              children: [ 
+                TextSpan(
+                  text: "Resultado Consulta de Subscriptos",
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),               
+                TextSpan(
+                  text: "Nadie se ha subscripto a este aviso " + jobOffer.id.toString(),
+                  style: Theme.of(context).textTheme.headline5?.copyWith(
+                      color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 
-  AppBar buildAppBar(BuildContext context) {
+  AppBar buildAppBar(BuildContext context){
     return AppBar(
-      backgroundColor: Color.fromARGB(255, 223, 134, 1),
+      backgroundColor: Color.fromARGB(255, 228, 137, 2),
       elevation: 0,
       leading: IconButton(
-        icon: SvgPicture.asset('assets/icons/back.svg',
-          color: Colors.white,
-        ),
-        onPressed: () => Navigator.pop(context),
+        icon: SvgPicture.asset("assets/icons/back.svg"),
+        onPressed: () {},
       ),
       actions: <Widget>[
         IconButton(
           icon: SvgPicture.asset(
-            "assets/icons/home.svg",
+            "assets/icons/list.svg",
             color: kTextColor,
           ),
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomePublisher(
+                builder: (context) => Published(
                   loginForm: loginForm,
                 ),
               ),
@@ -87,7 +105,7 @@ class DetailsPublished extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => Home(),
+                builder: (context) => HomePublisher(loginForm: loginForm,),
               ),
             );
           },
@@ -96,4 +114,6 @@ class DetailsPublished extends StatelessWidget {
       ],
     );
   }
+
+
 }

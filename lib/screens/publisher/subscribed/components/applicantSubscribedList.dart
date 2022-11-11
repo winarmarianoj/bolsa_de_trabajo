@@ -1,15 +1,15 @@
-import 'package:bolsa_de_trabajo/models/JobOffer.dart';
+import 'package:bolsa_de_trabajo/models/JobOfferApplication.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
-import 'package:bolsa_de_trabajo/screens/publisher/published/details/detailsPublished.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/subscribed/details/detailsSubscribed.dart';
 import 'package:flutter/material.dart';
 
-class PublisherJobOfferList extends StatelessWidget {
-  final JobOffer jobOffer;
+class ApplicantSubscribedList extends StatelessWidget {
+  final JobOfferApplication jobOfferApp;
   final LoginFormProvider loginForm;
   final VoidCallback? press;
-  const PublisherJobOfferList({
+  const ApplicantSubscribedList({
     Key? key,
-    required this.jobOffer,
+    required this.jobOfferApp,
     required this.loginForm,
     this.press, 
   }) : super(key: key);
@@ -20,23 +20,23 @@ class PublisherJobOfferList extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         child: Card(
-          color: Color.fromARGB(255, 4, 184, 184),
+          color: Color.fromARGB(255, 6, 216, 93),
           child: ListTile(
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => DetailsPublished(
+                    builder: (context) => DetailsSubscribed(
                       loginForm: loginForm,
-                      jobOffer: jobOffer,
+                      jobOfferApp: jobOfferApp,
                     ),
                   )
               );
             },
-            title: Text(jobOffer.title + " " + jobOffer.description + " " + jobOffer.area),
-            subtitle: Text(jobOffer.experience + " " + jobOffer.modality + " " + jobOffer.position + " " + jobOffer.category),
+            title: Text(jobOfferApp.name + " " + jobOfferApp.surname),
+            subtitle: Text(jobOfferApp.applied + " " + jobOfferApp.applicantID.toString() + " " + jobOfferApp.typeStudent),
             leading: CircleAvatar(
-              child: Text(jobOffer.title.substring(0,1)),
+              child: Text(jobOfferApp.name.substring(0,1) + jobOfferApp.surname.substring(0,1)),
             ),
             trailing: Icon(Icons.arrow_forward_ios),
           ),

@@ -74,8 +74,32 @@ class HomeState extends State<BodyHome>{
                 ),
               ),
             ),
+
+Positioned(
+          bottom: 0.0,
+          left: 0.0,
+          right: 0.0,
+          child: Container(
+            color: Colors.black,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      style: const TextStyle(color: cardTitle, fontWeight: FontWeight.bold),
+                      "Bienvenido a la Bolsa de Trabajo hecha y suministrada por Centro Universitario Vicente Lopez en conjunto con la Universidad Técnica Nacional de Buenos Aires.",
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+
           ],
         ),
+               
       ],
     );
     

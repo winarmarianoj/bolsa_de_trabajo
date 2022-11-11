@@ -5,13 +5,7 @@ import 'package:bolsa_de_trabajo/constant/constant.dart';
 import 'package:bolsa_de_trabajo/screens/home/components/bodyHome.dart';
 
 
-class Home extends StatelessWidget{
-  /*static Route<dynamic> route() {
-    return MaterialPageRoute(
-      builder: (context) => const Home(),
-    );
-  }*/
-    
+class Home extends StatelessWidget{    
   const Home({Key? key}) : super(key: key);
 
   @override

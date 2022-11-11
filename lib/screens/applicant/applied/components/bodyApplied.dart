@@ -30,15 +30,6 @@ class BodyApplied extends StatelessWidget{
                   itemBuilder: (context, index) => ApplicantAppliedList(
                     loginForm: loginForm,
                     jobOfferApp: jobOfferAppList![index],
-                    /*press: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DetailsJobOfferApplied(
-                          loginForm: loginForm,
-                          jobOfferApp: jobOfferAppList![index],
-                        ),
-                      ),
-                    ),*/
                   ),
                 );
             }else if(snapshot.hasError){
