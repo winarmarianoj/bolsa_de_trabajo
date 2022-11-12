@@ -10,7 +10,6 @@ class DetailsBodyPublished extends StatelessWidget {
   const DetailsBodyPublished({Key? key, required this.jobOffer, required this.loginForm}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    // It provide us total height and width
     Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(      
       child: Column(

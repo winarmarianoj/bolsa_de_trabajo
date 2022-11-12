@@ -1,6 +1,7 @@
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:bolsa_de_trabajo/screens/home/home.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/home/components/bodyHomePublisher.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/publish.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/published.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -23,7 +24,7 @@ class HomePublisher extends StatelessWidget{
       backgroundColor: Color.fromARGB(255, 228, 137, 2),
       elevation: 0,
       leading: IconButton(
-        icon: SvgPicture.asset("assets/icons/logCuvl.svg"),  //("assets/icons/logo-utn.ba.svg"),
+        icon: SvgPicture.asset("assets/icons/logo-utn.ba.svg"),
         onPressed: () {},
       ),
       actions: <Widget>[
@@ -49,14 +50,14 @@ class HomePublisher extends StatelessWidget{
             color: kTextColor,
           ),
           onPressed: () {
-            /*Navigator.push(
+            Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => Publish(
                   loginForm: loginForm,
                 ),
               ),
-            );*/
+            );
           },
         ),
         IconButton(

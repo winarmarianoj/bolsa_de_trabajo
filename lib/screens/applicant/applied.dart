@@ -23,8 +23,8 @@ class Applied extends StatelessWidget{
       backgroundColor: Colors.teal,
       elevation: 0,
       leading: IconButton(
-        icon: SvgPicture.asset("assets/icons/back.svg"),
-        onPressed: () => Navigator.pop(context),
+        icon: SvgPicture.asset("assets/icons/logo-utn.ba.svg"),
+        onPressed: () {},
       ),
       actions: <Widget>[
         IconButton(

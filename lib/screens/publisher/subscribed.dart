@@ -2,6 +2,7 @@ import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:bolsa_de_trabajo/screens/home/home.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/homePublisher.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/publish.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/subscribed/components/bodySubscribed.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -25,8 +26,8 @@ class Subscribed extends StatelessWidget{
       backgroundColor: Color.fromARGB(255, 228, 137, 2),
       elevation: 0,
       leading: IconButton(
-        icon: SvgPicture.asset("assets/icons/back.svg"),
-        onPressed: () => Navigator.pop(context),
+        icon: SvgPicture.asset("assets/icons/logo-utn.ba.svg"),
+        onPressed: () {},
       ),
       actions: <Widget>[
         IconButton(
@@ -51,14 +52,14 @@ class Subscribed extends StatelessWidget{
             color: kTextColor,
           ),
           onPressed: () {
-            /*Navigator.push(
+            Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => Publish(
                   loginForm: loginForm,
                 ),
               ),
-            );*/
+            );
           },
         ),
         IconButton(
