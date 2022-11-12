@@ -1,7 +1,7 @@
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:bolsa_de_trabajo/screens/ui/decorations/input_decorations.dart';
-import 'package:bolsa_de_trabajo/screens/ui/widgets/auth_background.dart';
-import 'package:bolsa_de_trabajo/screens/ui/widgets/card_container.dart';
+import 'package:bolsa_de_trabajo/screens/ui/widgets/authentication.dart';
+import 'package:bolsa_de_trabajo/screens/ui/widgets/cardContainer.dart';
 import 'package:bolsa_de_trabajo/services/authenticationService.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,20 +12,32 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AuthBackground(
+      body: Authentication(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 250),
-              CardContainer(
+              SizedBox(height: 140),
+              CardContainer(                
                 child: Column(
-                  children: [
-                    const SizedBox(height: 10),
-                    Text(
-                      'Login',
-                      style: Theme.of(context).textTheme.headline4,
+                  children: <Widget>[
+                    const SizedBox(height: 5),
+                    Row(
+                      children: [
+                        const SizedBox(width: 70),
+                        Icon(
+                          Icons.person_add,
+                          color: Colors.black,
+                          size: 50,
+                        ),
+                        const SizedBox(width: 20),
+                        Text(
+                          'Login',
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                        const SizedBox(width: 20),
+                      ],
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 10),                    
                     ChangeNotifierProvider(
                       create: (_) => LoginFormProvider(),
                       child: _LoginForm(),

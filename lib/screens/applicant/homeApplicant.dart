@@ -23,7 +23,7 @@ class HomeApplicant extends StatelessWidget{
       backgroundColor: Colors.teal,
       elevation: 0,
       leading: IconButton(
-        icon: SvgPicture.asset("assets/icons/logo-utn.ba.svg"),
+        icon: SvgPicture.asset("assets/icons/logCuvl.svg"),
         onPressed: () {},
       ),
       actions: <Widget>[

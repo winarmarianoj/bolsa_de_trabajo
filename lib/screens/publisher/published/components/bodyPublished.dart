@@ -39,27 +39,7 @@ class BodyPublished extends StatelessWidget{
 
             return Center(child: CircularProgressIndicator(),);
           },
-        ),
-        Positioned(
-          bottom: 0.0,
-          left: 0.0,
-          right: 0.0,
-          child: Container(
-            color: Colors.white,
-            child: Row(
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: TextFormField(
-                      decoration: InputDecoration(hintText: "Ingresa texto aquí"),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),        
+        ),     
       ]
     );
     

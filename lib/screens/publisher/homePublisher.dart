@@ -23,7 +23,7 @@ class HomePublisher extends StatelessWidget{
       backgroundColor: Color.fromARGB(255, 228, 137, 2),
       elevation: 0,
       leading: IconButton(
-        icon: SvgPicture.asset("assets/icons/logo-utn.ba.svg"),
+        icon: SvgPicture.asset("assets/icons/logCuvl.svg"),  //("assets/icons/logo-utn.ba.svg"),
         onPressed: () {},
       ),
       actions: <Widget>[

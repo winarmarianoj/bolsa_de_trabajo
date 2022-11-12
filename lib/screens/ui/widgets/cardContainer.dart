@@ -13,16 +13,11 @@ class CardContainer extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 32),
       child: Card(
-        elevation: 3,
-        child: Padding(
-          padding: EdgeInsets.all(16),
+        elevation: 0,        
+        child: Padding(          
+          padding: EdgeInsets.all(8),
           child: this.child,
         ),
-
-        // width: double.infinity,
-        // padding: EdgeInsets.all(20),
-        // decoration: _createCardShape(),
-        // child: this.child,
       ),
     );
   }
@@ -35,8 +30,8 @@ class CardContainer extends StatelessWidget {
               color: Colors.black12,
               blurRadius: 15,
               offset: Offset(
-                0,
-                5,
+                2,
+                7,
               ),
             )
           ]);
