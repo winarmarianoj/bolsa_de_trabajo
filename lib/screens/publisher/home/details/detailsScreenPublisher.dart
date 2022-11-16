@@ -2,6 +2,7 @@ import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/home/details/components/detailsBodyPublisher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:bolsa_de_trabajo/constant/constant.dart';
 
 class DetailsScreenPublisher extends StatelessWidget {
   final JobOffer jobOffer;
@@ -16,12 +17,12 @@ class DetailsScreenPublisher extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Color.fromARGB(255, 228, 137, 2),
+      backgroundColor: themeColorAppBarPublisher,
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(
           'assets/icons/back.svg',
-          color: Colors.white,
+          color: themeButtonBackPublisher,
         ),
         onPressed: () => Navigator.pop(context),
       ),     

@@ -79,7 +79,7 @@ class HomeState extends State<BodyHome>{
                 left: 0.0,
                 right: 0.0,
                 child: Container(
-                  color: Colors.black,
+                  color: themeFooterBackgroundHome,
                   child: Row(
                     children: [
                       Image.asset(
@@ -97,12 +97,12 @@ class HomeState extends State<BodyHome>{
                                 TextSpan(
                                   text: "Address: ",
                                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      color: Colors.white, fontWeight: FontWeight.bold),
+                                      color: themeFooterTextTitle, fontWeight: FontWeight.bold),
                                 ),               
                                 TextSpan(
                                   text: "Carlos Villate 4480, Munro, Buenos Aires",
                                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                                      color: themeFooterTextValue, fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
@@ -114,12 +114,12 @@ class HomeState extends State<BodyHome>{
                                     TextSpan(
                                       text: "Email: ",
                                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                          color: Colors.white, fontWeight: FontWeight.bold),
+                                          color: themeFooterTextTitle, fontWeight: FontWeight.bold),
                                     ),               
                                     TextSpan(
                                       text: "bolsa.de.trabajo.utn.test@gmail.com",
                                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                                          color: themeFooterTextValue, fontWeight: FontWeight.bold),
                                     ),
                                   ],
                                 ),
@@ -131,12 +131,12 @@ class HomeState extends State<BodyHome>{
                                     TextSpan(
                                       text: "Phones: ",
                                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                          color: Colors.white, fontWeight: FontWeight.bold),
+                                          color: themeFooterTextTitle, fontWeight: FontWeight.bold),
                                     ),               
                                     TextSpan(
                                       text: "5197-1515 / 5197-1154",
                                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                                          color: themeFooterTextValue, fontWeight: FontWeight.bold),
                                     ),
                                   ],
                                 ),
@@ -148,12 +148,12 @@ class HomeState extends State<BodyHome>{
                                     TextSpan(
                                       text: "",
                                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                          color: Colors.white, fontWeight: FontWeight.bold),
+                                          color: themeFooterTextTitle, fontWeight: FontWeight.bold),
                                     ),               
                                     TextSpan(
                                       text: "https://www.vicentelopez.gov.ar/centrouniversitariovl",
                                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                                          color: themeFooterTextValue, fontWeight: FontWeight.bold),
                                     ),
                                   ],
                                 ),

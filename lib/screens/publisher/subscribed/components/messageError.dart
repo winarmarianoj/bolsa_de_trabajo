@@ -17,19 +17,19 @@ class MessageError extends StatelessWidget{
       appBar: buildAppBar(context),
       body: Center(
         child: Card(
-          color: Colors.black,
+          color: themeMessageBackground,
           child: RichText(
             text: TextSpan(
               children: [ 
                 TextSpan(
                   text: "Resultado Consulta de Subscriptos",
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+                      color: themeMessageTitle, fontWeight: FontWeight.bold),
                 ),               
                 TextSpan(
                   text: "Nadie se ha subscripto a este aviso " + jobOffer.id.toString(),
                   style: Theme.of(context).textTheme.headline5?.copyWith(
-                      color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                      color: themeMessageValue, fontWeight: FontWeight.bold),
                 ),
               ],
             ),

@@ -57,7 +57,7 @@ class BodySubscribed extends StatelessWidget{
                         TextSpan(
                           text: "Resultado Consulta de Subscriptos",
                           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                              color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                         ),               
                         TextSpan(
                           text: "Nadie se ha subscripto a este aviso " + jobOffer.id.toString(),

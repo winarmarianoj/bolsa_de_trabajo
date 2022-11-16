@@ -21,12 +21,12 @@ class DetailsJobOfferApplied extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.teal,
+      backgroundColor: themeColorAppBarApplicant,
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(
           'assets/icons/back.svg',
-          color: Colors.white,
+          color: themeButtonBackApplicant,
         ),
         onPressed: () => Navigator.pop(context),
       ),

@@ -35,7 +35,7 @@ class DescriptionJobOfferApplicant extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .headlineSmall
-                ?.copyWith(color: descriptionDetails, fontWeight: FontWeight.bold),          
+                ?.copyWith(color: descriptionJobOfferDetails, fontWeight: FontWeight.bold),          
           ),                     
         ]
       ),

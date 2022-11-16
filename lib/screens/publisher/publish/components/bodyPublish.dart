@@ -34,7 +34,7 @@ class BodyPublish extends StatelessWidget{
                   ),
                   height: 1150,
                    decoration: const BoxDecoration(
-                    color: Colors.grey,
+                    color: themeBodyPublishBackground,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20),

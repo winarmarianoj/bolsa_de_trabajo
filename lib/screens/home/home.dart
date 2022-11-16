@@ -18,7 +18,7 @@ class Home extends StatelessWidget{
 
   AppBar buildAppBar(BuildContext context){
     return AppBar(
-      backgroundColor: Colors.black87,
+      backgroundColor: themeAppBarHome,
       elevation: 10,
       leading: SvgPicture.asset(
         "assets/icons/logoUtnNegro.svg",

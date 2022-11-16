@@ -28,12 +28,12 @@ class ProductJobOfferApplicant extends StatelessWidget {
                     TextSpan(
                       text: "Detalles: ",
                       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferApplicantTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOffer.body,
                       style: Theme.of(context).textTheme.headline5?.copyWith(
-                          color: Colors.white54, fontWeight: FontWeight.bold),
+                          color: kTextLightColor, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -47,12 +47,12 @@ class ProductJobOfferApplicant extends StatelessWidget {
                     TextSpan(
                       text: "Area: ",
                       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferApplicantTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOffer.area,
                       style: Theme.of(context).textTheme.headline5?.copyWith(
-                          color: Colors.redAccent, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferApplicantTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -68,12 +68,12 @@ class ProductJobOfferApplicant extends StatelessWidget {
                     TextSpan(
                       text: "Experience: ",
                       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferApplicantTextTitle, fontWeight: FontWeight.bold),
                     ),
                     TextSpan(
                       text: jobOffer.experience + " años.",
                       style: Theme.of(context).textTheme.headline5?.copyWith(
-                          color: Colors.redAccent, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferApplicantTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -87,12 +87,12 @@ class ProductJobOfferApplicant extends StatelessWidget {
                 TextSpan(
                       text: "Modality: ",
                       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferApplicantTextTitle, fontWeight: FontWeight.bold),
                     ),                
                 TextSpan(
                   text: jobOffer.modality,
                   style: Theme.of(context).textTheme.headline5?.copyWith(
-                      color: Colors.redAccent, fontWeight: FontWeight.bold),
+                      color: themeProductJobOfferApplicantTextValue, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -104,12 +104,12 @@ class ProductJobOfferApplicant extends StatelessWidget {
                 TextSpan(
                       text: "Position: ",
                       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferApplicantTextTitle, fontWeight: FontWeight.bold),
                     ),                
                 TextSpan(
                   text: jobOffer.position,
                   style: Theme.of(context).textTheme.headline5?.copyWith(
-                      color: Colors.redAccent, fontWeight: FontWeight.bold),
+                      color: themeProductJobOfferApplicantTextValue, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -121,12 +121,12 @@ class ProductJobOfferApplicant extends StatelessWidget {
                 TextSpan(
                       text: "Category: ",
                       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferApplicantTextTitle, fontWeight: FontWeight.bold),
                     ),              
                 TextSpan(
                   text: jobOffer.category,
                   style: Theme.of(context).textTheme.headline5?.copyWith(
-                      color: Colors.redAccent, fontWeight: FontWeight.bold),
+                      color: themeProductJobOfferApplicantTextValue, fontWeight: FontWeight.bold),
                 ),
               ],
             ),

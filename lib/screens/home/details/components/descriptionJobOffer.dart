@@ -35,7 +35,7 @@ class DescriptionJobOffer extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .headlineMedium
-                ?.copyWith(color: descriptionDetails, fontWeight: FontWeight.bold),          
+                ?.copyWith(color: descriptionJobOfferDetails, fontWeight: FontWeight.bold),          
           ),                     
         ]
       ),

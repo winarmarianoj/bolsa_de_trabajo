@@ -1,3 +1,4 @@
+import 'package:bolsa_de_trabajo/constant/constant.dart';
 import 'package:flutter/material.dart';
 
 class DecorationPublishForm {
@@ -7,18 +8,18 @@ class DecorationPublishForm {
       IconData? prefixIcon}) {
     return InputDecoration(
         enabledBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: Color.fromARGB(255, 214, 117, 5)),
+          borderSide: BorderSide(color: themeDecorationPublishFormBorderSide),
         ),
         focusedBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: Color.fromARGB(255, 214, 117, 5), width: 2)),
+            borderSide: BorderSide(color: themeDecorationPublishFormFocusedBorder, width: 2)),
         hintText: hintText,
-        hintStyle: const TextStyle(color: Colors.white),
+        hintStyle: const TextStyle(color: themeDecorationPublishFormHintStyle),
         labelText: labelText,
-        labelStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25),
+        labelStyle: const TextStyle(color: themeDecorationPublishFormHintStyle, fontWeight: FontWeight.bold, fontSize: 25),
         prefixIcon: prefixIcon != null
             ? Icon(
                 prefixIcon,
-                color: Color.fromARGB(255, 214, 117, 5),
+                color: themeDecorationPublishFormPrefixIcon,
               )
             : null);
   }

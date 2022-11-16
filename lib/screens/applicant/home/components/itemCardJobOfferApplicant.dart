@@ -45,7 +45,7 @@ class ItemCardJobOfferApplicant extends StatelessWidget {
                   child: Text(
                     // products is out demo list
                     jobOffer!.title,
-                    style: const TextStyle(color: cardTitle, fontWeight: FontWeight.bold),
+                    style: const TextStyle(color: cardJobOfferTitle, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -54,7 +54,7 @@ class ItemCardJobOfferApplicant extends StatelessWidget {
                 child: Center(
                   child: Text(
                     jobOffer!.description,
-                    style: const TextStyle(color: cardDescription, fontWeight: FontWeight.w900),
+                    style: const TextStyle(color: cardJobOfferDescription, fontWeight: FontWeight.w900),
                   ),
                 ),
               ),
@@ -63,7 +63,7 @@ class ItemCardJobOfferApplicant extends StatelessWidget {
                 child: Center(
                   child: Text(
                     jobOffer!.category,
-                    style: const TextStyle(color: cardCategory, fontWeight: FontWeight.w900),
+                    style: const TextStyle(color: cardJobOfferCategory, fontWeight: FontWeight.w900),
                   ),
                 ),
               ),
@@ -72,7 +72,7 @@ class ItemCardJobOfferApplicant extends StatelessWidget {
                 child: Center(
                   child: Text(
                     jobOffer!.modality,
-                    style: const TextStyle(color: cardModality, fontWeight: FontWeight.w900),
+                    style: const TextStyle(color: cardJobOfferModality, fontWeight: FontWeight.w900),
                   ),
                 ),
               ),
@@ -81,7 +81,7 @@ class ItemCardJobOfferApplicant extends StatelessWidget {
                 child: Center(
                   child: Text(
                     jobOffer!.position,
-                    style: const TextStyle(color: cardPosition, fontWeight: FontWeight.w900),
+                    style: const TextStyle(color: cardJobOfferPosition, fontWeight: FontWeight.w900),
                   ),
                 ),
               ),
@@ -90,7 +90,7 @@ class ItemCardJobOfferApplicant extends StatelessWidget {
                 child: Center(
                   child: Text(
                     "Area: " + jobOffer!.area,
-                    style: const TextStyle(color: cardArea, fontWeight: FontWeight.w900),
+                    style: const TextStyle(color: cardJobOfferArea, fontWeight: FontWeight.w900),
                   ),
                 ),
               ),
@@ -99,7 +99,7 @@ class ItemCardJobOfferApplicant extends StatelessWidget {
                 child: Center(
                   child: Text(
                     "Experiencia: " + jobOffer!.experience + " años",
-                    style: const TextStyle(color: cardExperience, fontWeight: FontWeight.w900),
+                    style: const TextStyle(color: cardJobOfferExperience, fontWeight: FontWeight.w900),
                   ),
                 ),
               ),

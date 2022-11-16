@@ -1,3 +1,4 @@
+import 'package:bolsa_de_trabajo/constant/constant.dart';
 import 'package:flutter/material.dart';
 
 class CardContainer extends StatelessWidget {
@@ -23,11 +24,11 @@ class CardContainer extends StatelessWidget {
   }
 
   BoxDecoration _createCardShape() => BoxDecoration(
-          color: Colors.white,
+          color: themeCardContainerBoxDecorationCardShape,
           borderRadius: BorderRadius.circular(25),
           boxShadow: [
             BoxShadow(
-              color: Colors.black12,
+              color: themeCardContainerBoxDecorationBoxShadow,
               blurRadius: 15,
               offset: Offset(
                 2,

@@ -20,11 +20,11 @@ class DetailsSubscribed extends StatelessWidget {
   }
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Color.fromARGB(255, 223, 134, 1),
+      backgroundColor: themeColorAppBarSubscribed,
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset('assets/icons/back.svg',
-          color: Colors.white,
+          color: themeButtonBackPublisher,
         ),
         onPressed: () => Navigator.pop(context),
       ),

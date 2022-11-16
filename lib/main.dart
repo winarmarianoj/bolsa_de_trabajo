@@ -1,5 +1,6 @@
 import 'package:bolsa_de_trabajo/screens/home/home.dart';
 import 'package:flutter/material.dart';
+import 'package:bolsa_de_trabajo/constant/constant.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Bolsa de Trabajo UTN',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: themeColorHomePage,
       ),
       home: Home(),
     );

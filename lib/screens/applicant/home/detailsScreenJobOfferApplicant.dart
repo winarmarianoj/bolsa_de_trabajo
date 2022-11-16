@@ -3,6 +3,7 @@ import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:bolsa_de_trabajo/screens/applicant/home/details/components/detailsBodyJobOfferApplicant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:bolsa_de_trabajo/constant/constant.dart';
 
 class DetailsScreenJobOfferApplicant extends StatelessWidget {
   final JobOffer jobOffer;
@@ -18,12 +19,12 @@ class DetailsScreenJobOfferApplicant extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.teal,
+      backgroundColor: themeColorAppBarApplicant,
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(
           'assets/icons/back.svg',
-          color: Colors.white,
+          color: themeButtonBackApplicant,
         ),
         onPressed: () => Navigator.pop(context),
       ),

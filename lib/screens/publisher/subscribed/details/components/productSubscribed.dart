@@ -25,12 +25,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "JobOfferApplicantID: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.jobOfferApplicantID.toString(),
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -42,12 +42,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Applied: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.applied,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -59,12 +59,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "DeletedDay: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.deletedDay,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -76,12 +76,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "ApplicantID: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.applicantID.toString(),
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -93,12 +93,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Name: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.name,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -110,12 +110,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Surname: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.surname,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -127,12 +127,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "DNI: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.dni,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -144,12 +144,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Email: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.email,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -161,12 +161,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "PhoneNumber: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.phoneNumber,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -178,12 +178,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Type Student: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.typeStudent,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -195,12 +195,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "JobOfferID: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.jobOfferID.toString(),
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -212,12 +212,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Title: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.title,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -229,12 +229,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Description: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.description,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -246,12 +246,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Area: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.area,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -263,12 +263,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Body: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.body,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -280,12 +280,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Experience: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.experience,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -297,12 +297,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Modality: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.modality,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -314,12 +314,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Position: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.position,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -331,12 +331,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Category: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.category,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -348,12 +348,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Descripción Categoría: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.categoryDescription,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -365,12 +365,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Date Published: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.datePublished,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -382,12 +382,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Modified Day: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.modifiedDay,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -399,12 +399,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Deleted Day: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.jobOfferDeletedDay,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -416,12 +416,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "Deleted: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.jobOfferDeleted.toString(),
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -433,12 +433,12 @@ class ProductSubscribed extends StatelessWidget {
                     TextSpan(
                       text: "State: ",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: themeProductJobOfferPublisherTextTitle, fontWeight: FontWeight.bold),
                     ),               
                     TextSpan(
                       text: jobOfferApp.state,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: textDetailJobOfferApplied, fontWeight: FontWeight.bold),
+                          color: themePRoductJobOFferSubscribedTextValue, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),

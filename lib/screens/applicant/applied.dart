@@ -20,7 +20,7 @@ class Applied extends StatelessWidget{
 
   AppBar buildAppBar(BuildContext context){
     return AppBar(
-      backgroundColor: Colors.teal,
+      backgroundColor: themeColorAppBarApplicant,
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset("assets/icons/logo-utn.ba.svg"),

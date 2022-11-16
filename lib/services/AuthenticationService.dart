@@ -39,7 +39,7 @@ class AuthenticationService {
       return loginForm;
     }else{
       print("Fallo traer la lista de Joboffers");
-      /*showDialog(
+      showDialog(
         context: context, 
         builder: (context) => AlertDialog(
           title: Text("Resultado del Loguin"),
@@ -53,7 +53,7 @@ class AuthenticationService {
             ),
           ],
         ),
-      );*/
+      );
     }
     
   }

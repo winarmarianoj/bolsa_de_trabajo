@@ -5,6 +5,8 @@ import 'package:bolsa_de_trabajo/services/jobOfferService.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../constant/constant.dart';
+
 class PublishForm extends StatelessWidget {
   final LoginFormProvider loginForm;
   const PublishForm({Key? key, required this.loginForm}) : super(key: key);  
@@ -158,15 +160,15 @@ class PublishForm extends StatelessWidget {
             MaterialButton(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),
-              disabledColor: Colors.grey,
+              disabledColor: themePublishFormDisableButton,
               elevation: 0,
-              color: Colors.green,
+              color: themePublishFormSendButton,
               child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 80,
                    vertical: 5),
                   child: Text(
                     loginForm.isLoading ? 'Procesando....': 'Enviar' ,                     
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(color: themePublishFormStateProccess),
                   )), 
               onPressed: publishForm.isLoading && publishForm.title.length!=0 && publishForm.description.length!=0
                   ? null
