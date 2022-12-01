@@ -4,6 +4,7 @@ import 'package:bolsa_de_trabajo/screens/home/home.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/homePublisher.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/publish.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/subscribed/components/bodySubscribed.dart';
+import 'package:bolsa_de_trabajo/screens/ui/home/myDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
@@ -17,6 +18,7 @@ class Subscribed extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
+      drawer: HomeDrawer(),
       body: BodySubscribed(loginForm: loginForm, jobOffer: jobOffer,),
     );
   }
@@ -25,10 +27,10 @@ class Subscribed extends StatelessWidget{
     return AppBar(
       backgroundColor: Color.fromARGB(255, 228, 137, 2),
       elevation: 0,
-      leading: IconButton(
+      /*leading: IconButton(
         icon: SvgPicture.asset("assets/icons/logo-utn.ba.svg"),
         onPressed: () {},
-      ),
+      ),*/
       actions: <Widget>[
         IconButton(
           icon: SvgPicture.asset(

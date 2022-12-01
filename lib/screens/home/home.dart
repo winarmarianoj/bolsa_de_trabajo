@@ -1,4 +1,6 @@
-import 'package:bolsa_de_trabajo/screens/ui/login.dart';
+import 'package:bolsa_de_trabajo/screens/ui/home/myDrawer.dart';
+import 'package:bolsa_de_trabajo/screens/ui/login/login.dart';
+import 'package:bolsa_de_trabajo/screens/ui/signup/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
@@ -11,8 +13,15 @@ class Home extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(context),
+      appBar: EmptyAppBar(context), //buildAppBar(context),
+      drawer: HomeDrawer(),
       body: BodyHome(),
+    );
+  }
+  AppBar EmptyAppBar(BuildContext context){
+    return AppBar(
+      backgroundColor: themeAppBarHome,
+      elevation: 10,
     );
   }
 
@@ -20,10 +29,10 @@ class Home extends StatelessWidget{
     return AppBar(
       backgroundColor: themeAppBarHome,
       elevation: 10,
-      leading: SvgPicture.asset(
+      /*leading: SvgPicture.asset(
         "assets/icons/logoUtnNegro.svg",
         fit: BoxFit.fill,
-      ),
+      ),*/
       actions: <Widget>[
         IconButton(
           icon: SvgPicture.asset(
@@ -34,9 +43,7 @@ class Home extends StatelessWidget{
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => Login(
-                  context,
-                ),
+                builder: (context) => Login(),
               ),
             );
           },
@@ -47,14 +54,12 @@ class Home extends StatelessWidget{
             color: kTextColor,
           ),
           onPressed: () {
-            /*Navigator.push(
+            Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => Signup(
-                  context,
-                ),
+                builder: (context) => Signup(),
               ),
-            );*/
+            );
           },
         ),
         const SizedBox(width: kDefaultPaddin / 2)

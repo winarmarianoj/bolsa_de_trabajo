@@ -3,6 +3,7 @@ import 'package:bolsa_de_trabajo/screens/home/home.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/publish.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/published/components/bodyPublished.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/homePublisher.dart';
+import 'package:bolsa_de_trabajo/screens/ui/home/myDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
@@ -15,6 +16,7 @@ class Published extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
+      drawer: HomeDrawer(),
       body: BodyPublished(loginForm: loginForm,),
     );
   }
@@ -23,10 +25,10 @@ class Published extends StatelessWidget{
     return AppBar(
       backgroundColor: Color.fromARGB(255, 228, 137, 2),
       elevation: 0,
-      leading: IconButton(
+      /*leading: IconButton(
         icon: SvgPicture.asset("assets/icons/logo-utn.ba.svg"),
         onPressed: () {},
-      ),
+      ),*/
       actions: <Widget>[
         IconButton(
           icon: SvgPicture.asset(

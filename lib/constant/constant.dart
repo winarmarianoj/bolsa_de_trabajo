@@ -42,12 +42,14 @@ const themePersonAdd = Colors.black;
 const themePersonAddHeaderIcon = Colors.white;
 const themeLoginDisableButton = Colors.grey;
 const themeLoginSendButton = Colors.deepPurple;
+const themeRegisterSendButton = Color.fromARGB(255, 50, 230, 5);
 const themeLoginStateProccess = Colors.white;
 const themeInputDecorationLogin = Colors.deepPurple;
 const themeInputDecorationLoginLabel = Colors.grey;
 const themeCardContainerBoxDecorationCardShape = Colors.white;
 const themeCardContainerBoxDecorationBoxShadow = Colors.black12;
-
+const themeAuthBackgroundGradiantOne = Color.fromARGB(255, 79, 156, 63);
+const themeAuthBackgroundGradiantTwo = Color.fromRGBO(90, 70, 178, 1);
 
 //TODO JobOffer
 const kTextColor = Color(0xFF535353);
@@ -67,6 +69,17 @@ const cardJobOfferCategory = Color(0xFFFA8A04);
 const cardJobOfferArea = Color(0xFFFA8A04); 
 const bodyDetails = Colors.redAccent;
 const descriptionJobOfferDetails = Colors.amber;
+
+//TODO BUTTONS
+const primaryColor = Colors.blueGrey;
+const primaryColorDark = Colors.black;
+const neutral1Color = Colors.amber;
+const neutral3Color = Colors.amberAccent;
+
+//TODO DRAWER
+const themeDrawerGradiantOne = Color.fromARGB(255, 79, 156, 63);
+const themeDrawerGradiantTwo = Color.fromRGBO(90, 70, 178, 1);
+const themeDrawerText = Colors.amberAccent;
 
 
 const kDefaultPaddin = 20.0;

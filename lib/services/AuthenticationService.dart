@@ -28,32 +28,20 @@ class AuthenticationService {
       loginForm.email = jsonData['username'];
       loginForm.jwt = jsonData['jwt'];
       loginForm.role = jsonData['role'];  
-      print("Estoy en Login.dart - users es :" + loginForm.email + " y " + loginForm.role);                    
+      loginForm.isLoading = true;
+      /*print("Estoy en Login.dart - users es :" + loginForm.email + " y " + loginForm.role);                    
       if(loginForm.role == "APPLICANT"){
         Navigator.push(context, MaterialPageRoute(builder: ((context) => HomeApplicant(loginForm: loginForm,)))); 
       }else if(loginForm.role == "PUBLISHER"){
         Navigator.push(context, MaterialPageRoute(builder: ((context) => HomePublisher(loginForm: loginForm,))));
       }else if(loginForm.role == "UTN"){
         Navigator.push(context, MaterialPageRoute(builder: ((context) => Home())));
-      } 
+      } */
       return loginForm;
     }else{
       print("Fallo traer la lista de Joboffers");
-      showDialog(
-        context: context, 
-        builder: (context) => AlertDialog(
-          title: Text("Resultado del Loguin"),
-          content: Text("El usuario: " + loginForm.email + " con password " + loginForm.password + " no exite o es incorrecto."),
-          actions: <Widget>[
-            TextButton(
-              child: Text("OK"),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      );
+      loginForm.isLoading = false;
+      return loginForm;
     }
     
   }

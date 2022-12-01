@@ -28,10 +28,10 @@ class ApplicantAppliedList extends StatelessWidget {
             )
         );
       },
-      title: Text(jobOfferApp!.title + " " + jobOfferApp!.description + " " + jobOfferApp!.area),
-      subtitle: Text(jobOfferApp!.experience + " " + jobOfferApp!.modality + " " + jobOfferApp!.position + " " + jobOfferApp!.category),
+      title: Text(jobOfferApp.title + " " + jobOfferApp.description + " " + jobOfferApp.area),
+      subtitle: Text(jobOfferApp.experience + " " + jobOfferApp.modality + " " + jobOfferApp.position + " " + jobOfferApp.category),
       leading: CircleAvatar(
-        child: Text(jobOfferApp!.title.substring(0,1)),
+        child: Text(jobOfferApp.title.substring(0,1)),
       ),
       trailing: Icon(Icons.arrow_forward_ios),
     );

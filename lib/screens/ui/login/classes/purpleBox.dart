@@ -1,5 +1,5 @@
-import 'package:bolsa_de_trabajo/screens/ui/classes/cuvl.dart';
-import 'package:bolsa_de_trabajo/screens/ui/classes/utn.dart';
+import 'package:bolsa_de_trabajo/screens/ui/login/classes/cuvl.dart';
+import 'package:bolsa_de_trabajo/screens/ui/login/classes/utn.dart';
 import 'package:flutter/material.dart';
 
 class PurpleBox extends StatelessWidget {

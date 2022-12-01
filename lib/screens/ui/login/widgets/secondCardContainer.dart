@@ -1,10 +1,10 @@
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 import 'package:flutter/material.dart';
 
-class CardContainer extends StatelessWidget {
+class SecondCardContainer extends StatelessWidget {
   final Widget child;
 
-  const CardContainer({
+  const SecondCardContainer({
     Key? key,
     required this.child,
   }) : super(key: key);

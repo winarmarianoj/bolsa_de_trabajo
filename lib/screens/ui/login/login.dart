@@ -1,28 +1,33 @@
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
-import 'package:bolsa_de_trabajo/screens/ui/decorations/input_decorations.dart';
-import 'package:bolsa_de_trabajo/screens/ui/widgets/authentication.dart';
-import 'package:bolsa_de_trabajo/screens/ui/widgets/cardContainer.dart';
+import 'package:bolsa_de_trabajo/screens/applicant/homeApplicant.dart';
+import 'package:bolsa_de_trabajo/screens/home/home.dart';
+import 'package:bolsa_de_trabajo/screens/publisher/homePublisher.dart';
+import 'package:bolsa_de_trabajo/screens/ui/login/decorations/input_decorations.dart';
+import 'package:bolsa_de_trabajo/screens/ui/login/widgets/auth_background.dart';
+import 'package:bolsa_de_trabajo/screens/ui/login/widgets/card_container.dart';
 import 'package:bolsa_de_trabajo/services/authenticationService.dart';
+import 'package:bolsa_de_trabajo/utils/bounceButton.dart';
+import 'package:bolsa_de_trabajo/utils/customPopup.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Login extends StatelessWidget {
-  const Login(BuildContext context, {Key? key}) : super(key: key);
+  const Login({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Authentication(
+      body: AuthBackground(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 140),
-              CardContainer(                
+              SizedBox(height: 250),
+              CardContainers(                
                 child: Column(
                   children: <Widget>[
-                    const SizedBox(height: 5),
-                    Row(
+                    const SizedBox(height: 10),
+                    /*Row(
                       children: [
                         const SizedBox(width: 70),
                         Icon(
@@ -37,8 +42,12 @@ class Login extends StatelessWidget {
                         ),
                         const SizedBox(width: 20),
                       ],
+                    ),*/
+                    Text(
+                      'Login',
+                      style: Theme.of(context).textTheme.headline4,
                     ),
-                    const SizedBox(height: 10),                    
+                    const SizedBox(height: 30),                    
                     ChangeNotifierProvider(
                       create: (_) => LoginFormProvider(),
                       child: _LoginForm(),
@@ -66,7 +75,7 @@ class Login extends StatelessWidget {
 class _LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-     final loginForm = Provider.of<LoginFormProvider>(context);
+     var loginForm = Provider.of<LoginFormProvider>(context);
     return Container(
       child: Form(
         key: loginForm.formKey,
@@ -125,12 +134,42 @@ class _LoginForm extends StatelessWidget {
                   ? null
                   : () {
                       FocusScope.of(context).unfocus();
-                      if (!loginForm.isValidForm()) return;
-                      //loginForm.isLoading = true;
+                      if (!loginForm.isValidForm()) return;                      
                       Future.delayed(Duration(seconds: 5));
                       // TODO: validar si el login es correcto
                       AuthenticationService service = new AuthenticationService();
-                      service.getLoginUser(loginForm, context);                      
+                      loginForm = service.getLoginUser(loginForm, context) as LoginFormProvider;
+                      if(loginForm.isLoading){
+                        print("Estoy en Login.dart - users es :" + loginForm.email + " y " + loginForm.role);                    
+                        if(loginForm.role == "APPLICANT"){
+                          Navigator.push(context, MaterialPageRoute(builder: ((context) => HomeApplicant(loginForm: loginForm,)))); 
+                        }else if(loginForm.role == "PUBLISHER"){
+                          Navigator.push(context, MaterialPageRoute(builder: ((context) => HomePublisher(loginForm: loginForm,))));
+                        }else if(loginForm.role == "UTN"){
+                          Navigator.push(context, MaterialPageRoute(builder: ((context) => Home())));
+                        } 
+                      }else{
+                        showDialog(context: context, 
+                          builder: (_) => CustomPopup(
+                              title: 'Resultado del Login',
+                              message: 'Error en el proceso de login. Incorrecto password o su usuario no existe.',
+                              buttonAccept: BounceButton(
+                                buttonSize: ButtonSize.small,
+                                type: ButtonType.primary,
+                                label: 'OK',
+                                onPressed: () {
+                                  /*context.read<CreditCardListBloc>().add(
+                                        CreditCardListEvent.toggleLock(
+                                          card: card,
+                                        ),
+                                      );*/
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            )
+                        );                     
+                      }
+
                     }
             ),
           ],
