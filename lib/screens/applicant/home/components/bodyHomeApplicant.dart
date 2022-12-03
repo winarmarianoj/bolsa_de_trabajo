@@ -1,6 +1,8 @@
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:bolsa_de_trabajo/screens/applicant/home/components/itemCardJobOfferApplicant.dart';
 import 'package:bolsa_de_trabajo/screens/applicant/home/detailsScreenJobOfferApplicant.dart';
+import 'package:bolsa_de_trabajo/utils/bounceButton.dart';
+import 'package:bolsa_de_trabajo/utils/customPopup.dart';
 import 'package:flutter/material.dart';
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/services/jobOfferService.dart';
@@ -55,9 +57,25 @@ class BodyHomeApplicant extends StatelessWidget{
                             ),
                           ),
                         );
+                    }else if(!snapshot.hasData){
+                      print("No trae los avisos del home.");
+                      /* showDialog(context: context, 
+                        builder: (_) => CustomPopup(
+                          title: 'Resultado al traer los avisos',
+                          message: 'No hay avisos publicados.',
+                          buttonAccept: BounceButton(
+                            buttonSize: ButtonSize.small,
+                            type: ButtonType.secondary,
+                            label: 'OK',
+                            onPressed: () {                                
+                              Navigator.pop(context);
+                            },
+                          ),
+                        )
+                      ); */
                     }else if(snapshot.hasError){
                       print(snapshot.error);
-                      return Text("Error al traer joboffers");
+                      return Text("Error al traer joboffer.");
                     }
 
                     return Center(child: CircularProgressIndicator(),);

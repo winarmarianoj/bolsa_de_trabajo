@@ -77,9 +77,13 @@ const neutral1Color = Colors.amber;
 const neutral3Color = Colors.amberAccent;
 
 //TODO DRAWER
+const themeDrawerBackground = Colors.black;
 const themeDrawerGradiantOne = Color.fromARGB(255, 79, 156, 63);
 const themeDrawerGradiantTwo = Color.fromRGBO(90, 70, 178, 1);
-const themeDrawerText = Colors.amberAccent;
+const themeDrawerGradiantThree = Color.fromARGB(255, 3, 3, 3);
+const themeDrawerGradiantFour = Color.fromARGB(255, 3, 3, 3);
+const themeDrawerText = Color.fromRGBO(113, 230, 4, 1);
+const themeDrawerTextLinks = Colors.white;
 
 
 const kDefaultPaddin = 20.0;

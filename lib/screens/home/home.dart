@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:bolsa_de_trabajo/screens/ui/home/myDrawer.dart';
 import 'package:bolsa_de_trabajo/screens/ui/login/login.dart';
 import 'package:bolsa_de_trabajo/screens/ui/signup/signup.dart';
@@ -7,14 +10,14 @@ import 'package:bolsa_de_trabajo/constant/constant.dart';
 import 'package:bolsa_de_trabajo/screens/home/components/bodyHome.dart';
 
 
-class Home extends StatelessWidget{    
+class Home extends StatelessWidget{      
   const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: EmptyAppBar(context), //buildAppBar(context),
-      drawer: HomeDrawer(),
+      drawer: HomeDrawer(loginForm: new LoginFormProvider(),),
       body: BodyHome(),
     );
   }

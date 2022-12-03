@@ -133,44 +133,12 @@ class _LoginForm extends StatelessWidget {
               onPressed: loginForm.isLoading && loginForm.email.length!=0 && loginForm.password.length!=0
                   ? null
                   : () {
-                      FocusScope.of(context).unfocus();
-                      if (!loginForm.isValidForm()) return;                      
-                      Future.delayed(Duration(seconds: 5));
-                      // TODO: validar si el login es correcto
-                      AuthenticationService service = new AuthenticationService();
-                      loginForm = service.getLoginUser(loginForm, context) as LoginFormProvider;
-                      if(loginForm.isLoading){
-                        print("Estoy en Login.dart - users es :" + loginForm.email + " y " + loginForm.role);                    
-                        if(loginForm.role == "APPLICANT"){
-                          Navigator.push(context, MaterialPageRoute(builder: ((context) => HomeApplicant(loginForm: loginForm,)))); 
-                        }else if(loginForm.role == "PUBLISHER"){
-                          Navigator.push(context, MaterialPageRoute(builder: ((context) => HomePublisher(loginForm: loginForm,))));
-                        }else if(loginForm.role == "UTN"){
-                          Navigator.push(context, MaterialPageRoute(builder: ((context) => Home())));
-                        } 
-                      }else{
-                        showDialog(context: context, 
-                          builder: (_) => CustomPopup(
-                              title: 'Resultado del Login',
-                              message: 'Error en el proceso de login. Incorrecto password o su usuario no existe.',
-                              buttonAccept: BounceButton(
-                                buttonSize: ButtonSize.small,
-                                type: ButtonType.primary,
-                                label: 'OK',
-                                onPressed: () {
-                                  /*context.read<CreditCardListBloc>().add(
-                                        CreditCardListEvent.toggleLock(
-                                          card: card,
-                                        ),
-                                      );*/
-                                  Navigator.pop(context);
-                                },
-                              ),
-                            )
-                        );                     
-                      }
-
-                    }
+                    FocusScope.of(context).unfocus();
+                    if (!loginForm.isValidForm()) return;                      
+                    Future.delayed(Duration(seconds: 5));
+                    AuthenticationService service = new AuthenticationService();
+                    service.getLoginUser(loginForm, context);
+                  }
             ),
           ],
         ),

@@ -33,8 +33,8 @@ const elevation4 = BoxShadow(
   offset: Offset(7, 7),
 );
 
-enum ButtonType { primary, secondary }
-enum ButtonSize { small, medium }
+enum ButtonType { primary, secondary, subscriptos }
+enum ButtonSize { small, medium, superSmall }
 
 class BounceButton extends StatefulWidget {
   final ButtonType type;
@@ -107,6 +107,9 @@ class _BounceButtonState extends State<BounceButton>
         break;
       case ButtonType.secondary:
         wdgt = _buildSecondaryButton();
+        break;
+      case ButtonType.subscriptos:
+        wdgt = _buildSubscriptosButton();
     }
     return wdgt;
   }
@@ -136,6 +139,23 @@ class _BounceButtonState extends State<BounceButton>
       size: widget.buttonSize,
       buttonLabel: widget.label,
       backgroundColor: Colors.white,
+      textColor: widget.textColor,
+      leftIcon: widget.iconLeft,
+      rightIcon: widget.iconRight,
+      disabledBackgroundColor: Colors.white,
+      borderColor: _colorAnimation.value,
+      disabledBorderColor: neutral1Color,
+      onPressed: widget.onPressed,
+      contentBasedWidth: widget.contentBasedWidth,
+      horizontalPadding: widget.horizontalPadding,
+    );
+  }
+
+  Widget _buildSubscriptosButton() {
+    return BaseButton(
+      size: widget.buttonSize,
+      buttonLabel: widget.label,
+      backgroundColor: Color.fromARGB(255, 4, 235, 165),
       textColor: widget.textColor,
       leftIcon: widget.iconLeft,
       rightIcon: widget.iconRight,
@@ -248,12 +268,27 @@ class BaseButton extends StatelessWidget {
         heightPadding = size8;
         widthPadding = 12;
         innerPaddingRight = rightIcon != null
-            ? size12
+            ? size8
             : horizontalPadding && textScaleFactor <= 1
                 ? size24
                 : 0;
         innerPaddingLeft = leftIcon != null
-            ? size12
+            ? size8
+            : horizontalPadding && textScaleFactor <= 1
+                ? size24
+                : 0;
+        break;
+        case ButtonSize.superSmall:
+        iconSize = size8;
+        heightPadding = size12;
+        widthPadding = 18;
+        innerPaddingRight = rightIcon != null
+            ? size8
+            : horizontalPadding && textScaleFactor <= 1
+                ? size24
+                : 0;
+        innerPaddingLeft = leftIcon != null
+            ? size8
             : horizontalPadding && textScaleFactor <= 1
                 ? size24
                 : 0;

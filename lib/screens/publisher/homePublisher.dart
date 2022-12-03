@@ -16,7 +16,7 @@ class HomePublisher extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      drawer: HomeDrawer(),
+      drawer: HomeDrawer(loginForm: loginForm,),
       body: BodyHomePublisher(loginForm: loginForm,), 
     );
   }

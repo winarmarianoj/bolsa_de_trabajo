@@ -1,6 +1,7 @@
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/subscribed.dart';
+import 'package:bolsa_de_trabajo/utils/bounceButton.dart';
 import 'package:flutter/material.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 
@@ -176,24 +177,43 @@ class ProductPublished extends StatelessWidget {
           Row(            
             children: <Widget>[              
               Container(
-                  margin: EdgeInsets.only(top: size.height * 0.04),
+                  margin: EdgeInsets.only(top: size.height * 0.1, left: 100),
                   padding: EdgeInsets.only(
-                    top: size.height * 0.04,
-                    left: 170,
-                    right: 0,
-                  ),
-                  height: 230,
-                  width: 330,
-                   decoration: const BoxDecoration(
-                    //color: kFondo,
+                    top: size.height * 0.02,
+                    left: 20,
+                    right: 20,
+                    bottom: 50,
+                  ),                  
+                  height: 130,
+                  width: 230,
+                   /*decoration: const BoxDecoration(
+                    color: kFondo,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(40),
                       topRight: Radius.circular(40),
                       bottomLeft: Radius.circular(40),
                       bottomRight: Radius.circular(40),
                     ),
+                  ),*/
+                  child: 
+                  BounceButton(
+                    buttonSize: ButtonSize.superSmall,
+                      type: ButtonType.subscriptos,
+                      label: 'Ver Subscriptos',
+                      //iconRight: Icons.subscript,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Subscribed(
+                              loginForm: loginForm,
+                              jobOffer: jobOffer,
+                            ),
+                          ),
+                        );
+                      },
                   ),
-                  child: IconButton(
+                  /* IconButton(
                     icon: 
                     Image.asset(
                       "assets/images/subscribers.png",
@@ -212,7 +232,7 @@ class ProductPublished extends StatelessWidget {
                         ),
                       );
                     },
-                  ),
+                  ), */
                 ),
             ],
           ),   

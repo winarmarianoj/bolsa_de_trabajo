@@ -127,42 +127,7 @@ class ProductJobOffer extends StatelessWidget {
                 ),
               ],
             ),
-          ),                   
-          /*Row(            
-            children: <Widget>[              
-              Container(
-                  margin: EdgeInsets.only(top: size.height * 0.04),
-                  padding: EdgeInsets.only(
-                    top: size.height * 0.04,
-                    left: kDefaultPaddin*5,
-                    right: kDefaultPaddin/2,
-                  ),
-                  height: 210,
-                  width: 240,
-                   decoration: const BoxDecoration(
-                    color: kFondo,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(40),
-                      topRight: Radius.circular(40),
-                      bottomLeft: Radius.circular(40),
-                      bottomRight: Radius.circular(40),
-                    ),
-                  ),
-                  child: IconButton(
-                    icon: 
-                    Image.asset(
-                      "assets/images/apply.png",
-                        width: 110,
-                        height: 110,
-                        fit: BoxFit.cover,
-                    ),
-                    onPressed: () {
-                      // TODO si el usuario es Applicant vera este boton
-                    },
-                  ),
-                ),
-            ],
-          ),    */ 
+          ),
         ],
       ),
     );

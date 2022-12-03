@@ -3,6 +3,8 @@ import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:bolsa_de_trabajo/screens/home/home.dart';
 import 'package:bolsa_de_trabajo/screens/applicant/homeApplicant.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/homePublisher.dart';
+import 'package:bolsa_de_trabajo/utils/bounceButton.dart';
+import 'package:bolsa_de_trabajo/utils/customPopup.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -29,19 +31,38 @@ class AuthenticationService {
       loginForm.jwt = jsonData['jwt'];
       loginForm.role = jsonData['role'];  
       loginForm.isLoading = true;
-      /*print("Estoy en Login.dart - users es :" + loginForm.email + " y " + loginForm.role);                    
+      print("Estoy en Login.dart - users es :" + loginForm.email + " y " + loginForm.role);                    
       if(loginForm.role == "APPLICANT"){
         Navigator.push(context, MaterialPageRoute(builder: ((context) => HomeApplicant(loginForm: loginForm,)))); 
       }else if(loginForm.role == "PUBLISHER"){
         Navigator.push(context, MaterialPageRoute(builder: ((context) => HomePublisher(loginForm: loginForm,))));
       }else if(loginForm.role == "UTN"){
         Navigator.push(context, MaterialPageRoute(builder: ((context) => Home())));
-      } */
+      } 
       return loginForm;
     }else{
       print("Fallo traer la lista de Joboffers");
       loginForm.isLoading = false;
-      return loginForm;
+      //return loginForm;
+      showDialog(context: context, 
+        builder: (_) => CustomPopup(
+            title: 'Resultado del Login',
+            message: 'Error en el proceso de login. Incorrecto password o su usuario no existe.',
+            buttonAccept: BounceButton(
+              buttonSize: ButtonSize.small,
+              type: ButtonType.primary,
+              label: 'OK',
+              onPressed: () {
+                /*context.read<CreditCardListBloc>().add(
+                      CreditCardListEvent.toggleLock(
+                        card: card,
+                      ),
+                    );*/
+                Navigator.pop(context);
+              },
+            ),
+          )
+      );        
     }
     
   }

@@ -5,6 +5,7 @@ import 'package:bolsa_de_trabajo/screens/ui/login/login.dart';
 import 'package:bolsa_de_trabajo/screens/ui/login/widgets/auth_background.dart';
 import 'package:bolsa_de_trabajo/screens/ui/login/widgets/card_container.dart';
 import 'package:bolsa_de_trabajo/screens/ui/signup/decorations/registerDecorations.dart';
+import 'package:bolsa_de_trabajo/services/publisherService.dart';
 import 'package:flutter/material.dart';
 import 'package:bolsa_de_trabajo/constant/constant.dart';
 import 'package:provider/provider.dart';
@@ -207,10 +208,8 @@ class RegisterForm extends StatelessWidget {
                       if (!registerForm.isValidForm()) return;
                       registerForm.isLoading = true;
                       Future.delayed(Duration(seconds: 5));
-                      loginForm.email = registerForm.email;
-                      loginForm.password = registerForm.password;
-                                           
-                      Navigator.push(context, MaterialPageRoute(builder: ((context) => Login())));
+                      PublisherService service = new PublisherService();
+                      service.registerPublisher(registerForm, context);
                     }                    
             ),
           ],

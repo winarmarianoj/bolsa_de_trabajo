@@ -6,30 +6,32 @@ import 'package:bolsa_de_trabajo/constant/constant.dart';
 import 'package:provider/provider.dart';
 
 class HomeDrawer extends StatelessWidget {
-  HomeDrawer({Key? key}) : super(key: key);
-
+  final LoginFormProvider loginForm;
   final transitionDuration = Duration(milliseconds: 250);
+  HomeDrawer({Key? key, required this.loginForm}) : super(key: key);  
 
   @override
   Widget build(BuildContext context) {
-    final loginForm = Provider.of<LoginFormProvider>(context);
+    //final loginForm = Provider.of<LoginFormProvider>(context);
     return Drawer(
+      backgroundColor: themeDrawerBackground,
       width: 270,
       child: Column(                
           children: [            
             DrawerHeader(          
               duration: transitionDuration,
-              decoration: colorsShopOfVehicles(),
-              padding: const EdgeInsets.fromLTRB(65.0, 35.0, 65.0, 8.0),
+              decoration: colorsBolsaDeTrabajo(),
+              //padding: const EdgeInsets.fromLTRB(65.0, 35.0, 65.0, 8.0),
+              padding: const EdgeInsets.fromLTRB(5.0, 1.0, 1.0, 8.0),
               child: Column(
                 children: [
                   Image.asset(
                     "assets/images/logCuvl.png",
-                      width: 110,
-                      height: 45,
+                      width: 230,
+                      height: 70,
                       fit: BoxFit.cover,
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 15),
                   //Flexible(child: Text('Bienvenido ' + loginForm.email)),
                   RichText(
                     text: TextSpan(
@@ -43,36 +45,29 @@ class HomeDrawer extends StatelessWidget {
                       ],
                     ),
                   ),    
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 15),
                   RichText(
                     text: TextSpan(
                       children: [
-                        const TextSpan(text: "App : "),   
+                        //const TextSpan(text: "App : "),   
                         TextSpan(
-                          text: "Bolsa de Trabajo",
+                          text: "Bolsa de Trabajo CUVL & UTN",
                           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                               color: themeDrawerText, fontWeight: FontWeight.normal),
                         ),
                       ],
                     ),
                   ),    
-                  const SizedBox(height: 10),              
+                  const SizedBox(height: 15),                    
                 ],
               ),
-            ), 
-            DrawerHeader(
-              duration: transitionDuration,
-              decoration: colorsShopOfVehicles(),
-              padding: const EdgeInsets.fromLTRB(5.0, 1.0, 1.0, 8.0),
-              child: Column(
-                children: [
-                  const SizedBox(height: 5),
-                  RichText(
+            ),             
+            RichText(
                     text: TextSpan(
                       children: [
-                        const TextSpan(text: "Contacto: "),   
+                        const TextSpan(text: "Contacto:  "),   
                         TextSpan(
-                          text: "5197-1515 / 5197-1154",
+                          text: "  5197-1515  /  5197-1154",
                           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                               color: themeDrawerText, fontWeight: FontWeight.normal),
                         ),
@@ -83,7 +78,7 @@ class HomeDrawer extends StatelessWidget {
                   RichText(
                     text: TextSpan(
                       children: [
-                        const TextSpan(text: "Email : "),   
+                        const TextSpan(text: "Email: \n"),   
                         TextSpan(
                           text: "bolsa.de.trabajo.UTN.test@gmail.com",
                           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
@@ -96,54 +91,55 @@ class HomeDrawer extends StatelessWidget {
                   RichText(
                     text: TextSpan(
                       children: [
-                        const TextSpan(text: "Web Site: "),     
+                        const TextSpan(text: "Web Site: \n"),     
                         TextSpan(
                           text: "https://www.vicentelopez.gov.ar/centrouniversitariovl",
-                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
                               color: themeDrawerText, fontWeight: FontWeight.normal),
                         ),
                       ],
                     ),
                   ),    
-                  const SizedBox(height: 1),
-                ],
-              ),
-            ),            
+                  const SizedBox(height: 1),  
+
             ListTile(
-                leading: Icon(Icons.login),
-                title: Text('Login'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Login(),
-                    ),
-                  );
-                }
+              iconColor: Colors.white,
+              leading: Icon(Icons.login),
+              title: Text('Login',style: const TextStyle(color: themeDrawerTextLinks, fontWeight: FontWeight.bold),),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Login(),
+                  ),
+                );
+              }
             ),
             ListTile(
-                leading: Icon(Icons.app_registration_rounded),
-                title: Text('Register'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Signup(),
-                    ),
-                  );
-                }
+              iconColor: Colors.white,
+              leading: Icon(Icons.app_registration_rounded),
+              title: Text('Register',style: const TextStyle(color: themeDrawerTextLinks, fontWeight: FontWeight.bold),),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Signup(),
+                  ),
+                );
+              }
             ),
             ListTile(
-                leading: Icon(Icons.logout_outlined),
-                title: Text('Logout'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Login(),
-                    ),
-                  );
-                }
+              iconColor: Colors.white,
+              leading: Icon(Icons.logout_outlined),
+              title: Text('Logout',style: const TextStyle(color: themeDrawerTextLinks, fontWeight: FontWeight.bold),),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Login(),
+                  ),
+                );
+              }
             ),
           ],
       )
@@ -158,10 +154,10 @@ class HomeDrawer extends StatelessWidget {
         Colors.lightBlue.shade100,
       ])
   );
-  BoxDecoration colorsShopOfVehicles() => BoxDecoration(
+  BoxDecoration colorsBolsaDeTrabajo() => BoxDecoration(
           gradient: LinearGradient(colors: [
-        themeDrawerGradiantOne, 
-        themeDrawerGradiantTwo, 
+        themeDrawerGradiantThree, 
+        themeDrawerGradiantFour, 
       ])
   );
 }

@@ -1,6 +1,8 @@
 import 'package:bolsa_de_trabajo/providers/loginFormProvider.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/home/components/itemCardPublisher.dart';
 import 'package:bolsa_de_trabajo/screens/publisher/home/details/detailsScreenPublisher.dart';
+import 'package:bolsa_de_trabajo/utils/bounceButton.dart';
+import 'package:bolsa_de_trabajo/utils/customPopup.dart';
 import 'package:flutter/material.dart';
 import 'package:bolsa_de_trabajo/models/JobOffer.dart';
 import 'package:bolsa_de_trabajo/services/jobOfferService.dart';
@@ -54,8 +56,21 @@ class BodyHomePublisher extends StatelessWidget{
                           ),
                         );
                     }else if(snapshot.hasError){
-                      print(snapshot.error);
-                      return Text("Error al traer joboffers");
+                      print(snapshot.error);                      
+                      /* showDialog(context: context, 
+                        builder: (_) => CustomPopup(
+                          title: 'Resultado de todos los avisos',
+                          message: 'Error al traer joboffers.',
+                          buttonAccept: BounceButton(
+                            buttonSize: ButtonSize.small,
+                            type: ButtonType.secondary,
+                            label: 'OK',
+                            onPressed: () {                                
+                              Navigator.pop(context);
+                            },
+                          ),
+                        )
+                      ); */
                     }
 
                     return Center(child: CircularProgressIndicator(),);

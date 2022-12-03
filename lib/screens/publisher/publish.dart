@@ -16,7 +16,7 @@ class Publish extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      drawer: HomeDrawer(),
+      drawer: HomeDrawer(loginForm: loginForm,),
       body: BodyPublish(loginForm: loginForm,),
     );
   }

@@ -3,6 +3,7 @@ import 'package:bolsa_de_trabajo/constant/constant.dart';
 import 'package:bolsa_de_trabajo/screens/ui/signup/forms/applicantFormRegister.dart';
 import 'package:bolsa_de_trabajo/screens/ui/signup/forms/publisherFormRegister.dart';
 import 'package:bolsa_de_trabajo/screens/ui/signup/forms/registerScreen.dart';
+import 'package:bolsa_de_trabajo/utils/bounceButton.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatelessWidget{
@@ -16,17 +17,17 @@ class Register extends StatelessWidget{
             TableRow(
               children: [
                 _SigleCard(
-                    color: Colors.yellowAccent, /*icon: Icons.app_registration_outlined,*/ text: 'APPLICANT'),
+                    color: Colors.yellowAccent, icon: Icons.app_registration_outlined, text: 'APPLICANT'),
                 _SigleCard(
-                    color: Colors.yellowAccent, /*icon: Icons.app_registration,*/text: 'PUBLISHER'),
+                    color: Colors.yellowAccent, icon: Icons.app_registration,text: 'PUBLISHER'),
               ],
             ),
             TableRow(
               children: [
                 _SigleCard(
-                    color: Colors.yellowAccent, /*icon: Icons.shop,*/ text: 'UTN'),
+                    color: Colors.yellowAccent, icon: Icons.shop, text: 'UTN'),
                 _SigleCard(
-                    color: Colors.yellowAccent, /*icon: Icons.cloud,*/ text: 'ADMIN'),
+                    color: Colors.yellowAccent, icon: Icons.cloud, text: 'ADMIN'),
               ],
             ),
           ],
@@ -36,12 +37,12 @@ class Register extends StatelessWidget{
 }
 
 class _SigleCard extends StatelessWidget {
-   //final IconData icon;
+  final IconData icon;
   final Color color;
   final String text;
 
   const _SigleCard(
-      {Key? key, required this.color, required this.text})
+      {Key? key, required this.color, required this.icon, required this.text})
       : super(key: key);
 
   @override
@@ -53,44 +54,22 @@ class _SigleCard extends StatelessWidget {
         CircleAvatar(
           backgroundColor: Colors.green,          
           child: 
-          MaterialButton(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50)),
-              disabledColor: themeLoginDisableButton,
-              elevation: 0,
-              color: themeRegisterSendButton,              
-              child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 80,
-                   vertical: 15),
-                  child: Text(
-                    'Ingresando',
-                    style: const TextStyle(color: themeLoginStateProccess),
-                  )), 
-              onPressed: text == null
-                  ? null
-                  : () {
-                      FocusScope.of(context).unfocus();
-                      if(text=='APPLICANT'){
-                        Navigator.push(context, MaterialPageRoute(builder: ((context) => ApplicantFormRegister()))); 
-                      }else if(text=='PUBLISHER'){
-                        Navigator.push(context, MaterialPageRoute(builder: ((context) => PublisherFormRegister()))); 
-                      }else if(text=='UTN'){
-                        Navigator.push(context, MaterialPageRoute(builder: ((context) => RegisterScreen()))); 
-                      }else if(text=='ADMIN'){
-                        Navigator.push(context, MaterialPageRoute(builder: ((context) => RegisterScreen()))); 
-                      }
-                    }                
-            ),
-
-          /*IconButton(
-            onPressed: goToRegister(text, context), 
-            icon: Icon(
-              this.icon,
-              size: 35,
-              color: Colors.white,
-            ),
-          ),*/
-          radius: 30,
+          BounceButton(
+            buttonSize: ButtonSize.small,
+              type: ButtonType.primary,
+              label: 'Registrarme...',
+              iconLeft: this.icon,
+              onPressed: () {
+                if(text=='APPLICANT'){
+                  Navigator.push(context, MaterialPageRoute(builder: ((context) => ApplicantFormRegister()))); 
+                }else if(text=='PUBLISHER'){
+                  Navigator.push(context, MaterialPageRoute(builder: ((context) => PublisherFormRegister()))); 
+                }else if(text=='UTN'){
+                  Navigator.push(context, MaterialPageRoute(builder: ((context) => RegisterScreen()))); 
+                }
+              },
+          ),
+          radius: 24,
         ),
         SizedBox(height: 10),
         Text(
@@ -140,3 +119,43 @@ class _CardBackground extends StatelessWidget {
     );
   }
 }
+
+
+/* MaterialButton(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50)),
+      disabledColor: themeLoginDisableButton,
+      elevation: 0,
+      color: themeRegisterSendButton,            
+      child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 80,
+            vertical: 15),
+          child: Text(
+            'Ingresando',
+            style: const TextStyle(color: themeLoginStateProccess),
+          )), 
+      onPressed: text == null
+          ? null
+          : () {
+              FocusScope.of(context).unfocus();
+              if(text=='APPLICANT'){
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => ApplicantFormRegister()))); 
+              }else if(text=='PUBLISHER'){
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => PublisherFormRegister()))); 
+              }else if(text=='UTN'){
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => RegisterScreen()))); 
+              }else if(text=='ADMIN'){
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => RegisterScreen()))); 
+              }
+            }                
+  ),
+    IconButton(
+    onPressed: goToRegister(text, context), 
+    icon: Icon(
+      this.icon,
+      size: 35,
+      color: Colors.white,
+    ),
+  ), */
+          
+          

@@ -20,7 +20,7 @@ class DecorationPublishForm {
             ? Icon(
                 prefixIcon,
                 color: themeDecorationPublishFormPrefixIcon,
-              )
+            )
             : null);
   }
 }

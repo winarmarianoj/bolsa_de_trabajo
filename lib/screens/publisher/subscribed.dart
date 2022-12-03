@@ -18,7 +18,7 @@ class Subscribed extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      drawer: HomeDrawer(),
+      drawer: HomeDrawer(loginForm: loginForm,),
       body: BodySubscribed(loginForm: loginForm, jobOffer: jobOffer,),
     );
   }
